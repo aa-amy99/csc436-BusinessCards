@@ -1,0 +1,38 @@
+.errorHeader {
+    position: absolute;
+    left: 36%;  
+    top: 5%;
+    color: black;
+    font-weight: bold;
+    font-size: 100px;
+    font-family: "Times New Roman", Times, serif; 
+  }
+
+  .errorBox {
+    position: absolute;
+    background-color: rgb(241, 220, 201);
+    color: black;
+    left: 28%;  
+    top: 30%;
+    width: 575px;
+    height: 315px; 
+    font-family: "Times New Roman", Times, serif;
+    border: 10px solid rgb(155, 114, 77);
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .errorBody1{
+    position: absolute;
+    top: 47%;
+    left: 40%;  
+    font-weight: bold;
+    font-size: 42px;
+  }
+  .errorBody2{
+    position: absolute;
+    top: 70%;
+    left: 25%; 
+    font-weight: bold;
+    font-size: 42px;  
+  }

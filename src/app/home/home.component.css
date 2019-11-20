@@ -1,0 +1,37 @@
+.homeHeader {
+    position: relative;
+    left: 20%;  
+    top: 10%;
+    color: black;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: "Times New Roman", Times, serif; 
+  }
+
+  .homeBox {
+    position: relative;
+    background-color: rgb(241, 220, 201);
+    border: 7px solid rgb(155, 114, 77);
+    color: black;
+    left: 30%; 
+    width: 500px;
+    height: 300px; 
+    font-family: "Times New Roman", Times, serif;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .homeBody1{
+    position: relative;
+    top: 15%;
+    left: 43%;  
+    font-weight: bold;
+    font-size: 38px;
+  }
+  .homeBody2{
+    position: relative;
+    top: 25%;
+    left: 10%; 
+    font-weight: bold;
+    font-size: 32px;  
+  }

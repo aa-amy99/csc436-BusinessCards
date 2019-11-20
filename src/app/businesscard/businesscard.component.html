@@ -1,0 +1,73 @@
+
+<div *ngFor="let bc of cardsList"> 
+  <span class = "cardBox"><a></a> 
+    <div class = "cardHeader">{{bc.firstname}} {{bc.lastname}}</div>
+    <div class = "cardBody0">{{bc.title}}</div>
+    <div class = "cardBody1">{{bc.company}}</div>
+    <div class = "cardBody2">{{bc.address}}</div>
+    <div class = "cardBody3"><i class="fa fa-mobile"></i>&#160;{{bc.phonenumber}}</div>
+    <div class = "cardBody4"><i class="fa fa-envelope-o"></i>&#160;{{bc.email}}</div>
+    </span>
+
+    <button class="updateBtn" (click)="startUpdate(this.bc)">
+        <i class="fa fa-edit fa-1x"></i><br>Update</button>
+      <button class="deleteBtn" (click)="removeMyCard(this.bc)">
+      <i class="fa fa-trash fa-1x"></i><br>Delete</button>
+   
+  <span *ngIf="bc.cardIndex==selectedCardID && selectedCardID!='exit'">
+      <div class="editCard">
+        <h3 class = "editHeader">Update Form</h3>
+        <div>
+            <button class="submitBtn" (click)="updateMyCard(bc)">&#160;Submit
+                <i class="fa fa-chevron-right"></i>
+              </button>
+              <button class ="exitBtn" (click)="stopUpdate()">&#160;Exit
+                  <i class="fa fa-window-close"></i>
+                </button>
+              </div>
+        <div class="editForm mt-2">
+          <div class="pr-2">
+            <label class="editFont" for="firstname">Firstname:</label>
+            <input class="form-control mr-2" name = "firstname" [(ngModel)]="bc.firstname">
+            <label class="editFont" for="lastname">Lastname:</label>
+            <input class="form-control" name = "lastname"  [(ngModel)]="bc.lastname">
+          </div>
+        </div>
+
+        <div class="editForm">
+            <div class="title-form pr-2">
+              <label class="editFont" for="title">Title:</label>
+              <input class="form-control" name = "title" [(ngModel)]="bc.title">
+            </div>
+            <div>
+              <label class="editFont" for="firm">Company:</label>
+              <input class="form-control" name = "firm" [(ngModel)]="bc.company">
+            </div>
+          </div>
+
+        <div class="editForm">
+            <div class="address-form">
+              <label class="editFont" for="address">Address: </label>
+              <input class="form-control mr-2" name = "address" [(ngModel)]="bc.address">
+            </div>
+        </div>
+        <div class="editForm">
+          <div class="email-form pr-2">
+            <label class="editFont" for="email">Email: </label>
+            <input class="form-control" name = "email" [(ngModel)]="bc.email">
+          </div>
+          <div class="phone-form">
+            <label class="editFont" for="phoneNumber">Tel:</label>
+            <input class="form-control" name = "phonenumber" [(ngModel)]="bc.phonenumber">
+            <br>
+          </div>
+        </div>
+      </div>
+    </span> 
+  </div>
+
+  
+
+   
+
+

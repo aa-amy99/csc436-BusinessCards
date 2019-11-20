@@ -1,0 +1,52 @@
+.profileHeaderBox {
+  position: relative;
+  background-color: rgb(241, 220, 201);
+  color: black;
+  left: 33%;  
+  top: 40%;
+  width: 400px;
+  height: 350px; 
+  font-family: "Times New Roman", Times, serif;
+  border: 5px solid rgb(155, 114, 77);
+  padding: 20px;
+  margin: 20px;
+}
+.profileHeader {
+    position: relative;
+    left: 29%;  
+    top: 3%;
+    color: black;
+    font-weight: normal;
+    font-size: 32px;
+    font-family: "Times New Roman", Times, serif; 
+  }
+
+  .profileBox {
+    position: relative;
+    background-color: rgb(219, 126, 39);
+    color: white;
+    left: -12.8%;  
+    top: 8%;
+    width: 400px;
+    height: 130px; 
+    font-family: "Times New Roman", Times, serif;
+    border: 7px solid rgb(155, 114, 77);
+    padding: 20px;
+    margin: 20px;
+  }
+ 
+ 
+  .profileInfo{
+    position: relative;
+    top: 10%;
+    left: 8%; 
+    font-weight: bold;
+    font-size: 19px; 
+  }
+  .profileImage{
+    position: relative;
+    top:5%;
+    left: 27%; 
+  
+  }
+ 

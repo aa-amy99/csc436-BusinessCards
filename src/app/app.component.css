@@ -1,0 +1,61 @@
+.logout-btn{
+    background-color: black;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 19px; 
+    position: absolute;
+    padding: 9px 20px;
+    transition: .5s ease;
+    top: 3%;
+    left: 80%;  
+}
+
+.navBar {
+    background-color: rgb(155, 114, 77);
+    overflow: hidden;
+    color: white;
+    font-family: "Verdana";
+    font-size: 16px; 
+    }
+    .navBar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;}
+    
+    .navBar a:hover {
+    background-color: rgb(247, 221, 181);
+    color: black;
+    }
+
+    .navBar a:focus {
+    background-color: rgb(247, 221, 181);
+    color: black;
+    }
+
+    .appName{
+    color: black;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    position: relative;
+    font-size: 20px;
+    padding: 9px 25px;
+    transition: .5s ease;
+    top: 15%;
+    left: -6%;  
+    }
+    .logoIcon{
+        color: black;
+        font-weight: bold;
+        font-family: "Times New Roman", Times, serif;
+        position: absolute;
+        font-size: 20px;
+        padding: 9px 25px;
+        transition: .5s ease;
+        top: -2%;
+        left: 0%;  
+        }
+
+

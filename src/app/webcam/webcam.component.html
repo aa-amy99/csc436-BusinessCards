@@ -1,0 +1,29 @@
+
+<span>
+      <button class="camera-btn" (click)="triggerSnapshot()">
+          Click To Snap
+          <i class="fa fa-camera fa-3x" aria-hidden="true"></i></button>
+      </span>
+<div class = "myImage">
+<webcam [height]="290" 
+[trigger]="triggerObservable"
+(imageCapture)="handleImage($event)" 
+(initError)="handleInitError($event)"
+[imageQuality]="1"></webcam>
+</div>
+
+
+<div id="snapshot" class="snapshot mt-5" *ngIf="webcamImage"> 
+    <span>
+        <button class="okBtn" (click)="convertToBase64()">Add Card&#160;<i class="fa fa-check-circle"></i></button>
+        <button class="retakeBtn" (click)="webcamImage=null">Retake&#160;&#160;<i class="fa fa-camera"></i></button>
+    </span>
+        <div class = "myImage">
+          <img [src]="webcamImage.imageAsDataUrl" id="image"/>
+           </div>
+        
+          </div>
+
+
+
+

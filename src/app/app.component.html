@@ -1,0 +1,19 @@
+<nav class = "navBar">
+    <a></a><a></a><a></a><a></a>
+    <a routerLink ="/home"><i class="fa fa-home"></i>&#160;Home</a><a></a>
+    <a routerLink ="/businessCards"><i class="fa fa-address-card"></i>&#160;My Business Cards</a><a></a>
+    <a routerLink="/newCard"><i class="fa fa-user-plus"></i>&#160;Add Card</a><a></a>
+    <a routerLink="/webcam"><i class="fa fa-camera"></i>&#160;Webcam</a><a></a>
+    <a routerLink="/userProfile"><i class="fa fa-user"></i>&#160;My Profile</a>
+    <div class = "logoIcon">
+      <img src="/assets/images/mainicon.png" />
+      <span class ="appName">
+        MY  |  BUSINESS  |  CARDS 
+      </span>
+      </div>
+    <a></a>
+  </nav> 
+  <div *ngIf="authService.isAuthorized()">
+    <app-logout></app-logout>
+  </div>
+<router-outlet></router-outlet>

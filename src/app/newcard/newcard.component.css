@@ -1,0 +1,95 @@
+.submitBtn{
+  background-color: rgb(147, 102, 63);
+  color: white;
+  font-weight: normal;
+  border: 2px solid white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 19px; 
+  position: relative;
+  padding: 9px 20px;
+  transition: .5s ease;
+  left: 35%;  
+  margin-top: 5%;
+  border-radius: 8px;
+}
+
+.submitBtn:hover{
+  background: rgb(238, 139, 16);
+  color: white;
+  }
+
+.newcard-form {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+
+.newcardHeader {
+  position: absolute;
+  left: 23%;  
+  top: 5%;
+  color: white;
+  font-weight: normal;
+  font-size: 24px;
+  font-family: "Times New Roman", Times, serif; 
+}
+
+
+.newcardForm {
+  position: relative;
+  background-color: black;
+  color: white;
+  left: 30%;  
+  top: 30%;
+  width: 500px;
+  height: 580px; 
+  font-family: "Times New Roman", Times, serif;
+  border: 7px solid rgb(155, 114, 77);
+  padding: 20px;
+  margin: 20px;
+}
+
+.newcardField{
+  position: absolute;
+  left: 10%;  
+  top: 20%;
+  width: 300px;
+}
+.newcardError{
+  color: black;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 3%;
+  font-weight: bold;
+  background-color: rgba(249, 188, 84, 0.899);
+}
+
+.newcardInfo{
+  color: rgb(242, 217, 184);
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+
+.newcard-btn{
+  background-color: black;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 19px; 
+  position: absolute;
+  transition: .5s ease;
+  top: 98%;
+  left: 37%;  
+}
+
+
+.inputError{
+  color: rgb(255, 184, 61);
+  font-size: 18px;
+  text-align: center;
+  margin-top: 3%;
+  font-weight: bold;
+}

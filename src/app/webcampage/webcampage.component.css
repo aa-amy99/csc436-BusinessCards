@@ -1,0 +1,62 @@
+body{
+    background-color: #000000;
+  }
+.imageHeaderBox {
+    position: relative;
+    background-color: rgb(241, 220, 201);
+    color: black;
+    left: 95%;  
+    width: 350px;
+    height: 200px; 
+    font-family: "Times New Roman", Times, serif;
+    border: 5px solid rgb(155, 114, 77);
+    padding: 20px;
+    margin: 20px;
+  }
+
+
+
+.cardHeader {
+    position: absolute;
+    left: 15%;  
+    top: 12%;
+    color: black;
+    font-weight: normal;
+    font-size: 23px;
+    font-family: "Times New Roman", Times, serif; 
+  }
+
+  .webcamBtn{
+    background-color: black;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px; 
+    position: absolute;
+    padding: 9px 15px;
+    transition: .5s ease;
+    left: 10%;  
+    bottom: 9%;
+    border-radius: 8px;
+}
+
+.webcamBtn:hover{
+  background-color: rgb(155, 114, 77);
+}
+
+.stopwebcamBtn{
+  background-color: black;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px; 
+  position: absolute;
+  padding: 9px 15px;
+  transition: .5s ease;
+  right: 10%;  
+  align-self: right;
+  bottom: 9%;
+  border-radius: 8px;
+}
+
+.stopwebcamBtn:hover{
+  background-color: rgb(155, 114, 77);
+}

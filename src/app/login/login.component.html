@@ -1,0 +1,27 @@
+<div>
+  <br><br>
+<div class="loginError" role="alert" *ngIf="authService.isNotMatched">
+    <i class="fa fa-warning"></i>&#160;Your username/password is incorrect!
+    &#160;<i class="fa fa-warning"></i>
+</div>
+
+<div class="myFormGroup">
+  <form [formGroup]="formGroup">
+      <h3 class ="loginHeader">Sign-in</h3>
+      <div class="loginField">
+        <div class="form-group">
+          <label class = "loginInfo" for="username">Username</label>
+          <input class="form-control" id ="usernameInput" placeholder="Your email address" formControlName="username">
+          <label class="loginInfo" for="password">Password</label>
+          <input class="form-control input-password" type="password" id ="passwordInput" placeholder="Your password" 
+            [formControl]="formGroup.controls['password']">
+            <br>
+        </div>
+
+        <div class="login-btn">
+          <button type="submit" (click)="login()" >Sign In&#160;<i class="fa fa-arrow-circle-right"></i></button>
+        </div>
+      </div>
+  </form>
+</div>
+</div>

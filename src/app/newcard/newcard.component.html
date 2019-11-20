@@ -1,0 +1,66 @@
+<div>
+      <br>
+      <form ngControl="addNewCardForm" #addNewCardForm ="ngForm" > 
+       <div class="newcardError" role="alert" *ngIf= "isClicked && !addNewCardForm.valid">
+          <i class="fa fa-warning"></i>&#160;Some Inputs are Missing&#160;
+          <i class="fa fa-warning"></i>
+        </div>
+        <div class="newcardForm">
+          <h3 class="newcardHeader"> <i class="fa fa-address-card"></i>&#160;&#160;ADD | NEW | CARD</h3>
+          <br><br>
+  
+          <div class="form-group newcard-form">
+            <div class="form-group pr-4">
+              <label class="newcardInfo" for="firstname">Firstname:</label>
+              <input class="form-control mr-2" name="firstname" placeholder="firstname" required 
+              [(ngModel)]="newCard.firstname" #firstname="ngModel">
+            </div>
+            <div>
+              <label class="newcardInfo" for="lastname">Lastname:</label>
+              <input class="form-control" name="lastname" placeholder="lastname" required 
+              [(ngModel)]="newCard.lastname" #lastname="ngModel">
+            </div>
+          </div>
+
+        <div class="form-group newcard-form">
+          <div class="form-group pr-4">
+            <label class="newcardInfo" for="title">Title:</label>
+            <input class="form-control" name="title" placeholder="title" required 
+            [(ngModel)]="newCard.title" #title="ngModel">
+          </div>
+            <div>
+            <label class="newcardInfo" for="company">Company:</label>
+            <input class="form-control" name="company" placeholder="company" required 
+            [(ngModel)]="newCard.company" #company="ngModel"> 
+        </div>
+      </div>
+          <div class="form-group newcard-form">
+            <div class="email-form pr-4">
+              <label class="newcardInfo" for="email">Email Address: </label>
+              <input class="form-control" name="email"placeholder="email" required 
+              [(ngModel)]="newCard.email" #email="ngModel">
+            </div>
+            <div class="phone-form">
+              <label class="newcardInfo" for="phoneNumber">Phone Number:</label>
+              <input class="form-control" name="phonenumber" placeholder="phone number" required 
+              [(ngModel)]="newCard.phonenumber"  #phonenumber="ngModel">
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <div class = "newcard-form">
+              <label class="newcardInfo" for="address">Address:&#160;&#160;</label>
+              <input class="form-control" placeholder="address" required 
+              [(ngModel)]="newCard.address" name="address" #address="ngModel" >
+            </div>
+          </div>
+          
+          <div class="submit-form">
+            <button class="submitBtn" (click)="addNewCard()">Submit &#160;<i class="fa fa-arrow-circle-right"></i></button>
+            </div>
+        </div>
+        
+      </form>
+      
+  </div>
+  
