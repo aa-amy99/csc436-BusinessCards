@@ -50,6 +50,7 @@ export class WebCamComponent implements OnInit {
       this.snapshot.emit(src);
       this.webcamService.getImageDataFromWebcam(src).subscribe(output => {
         this.snaptext.emit(output);});
+    
     alert("Text Detection Fails!");        
   });
   }

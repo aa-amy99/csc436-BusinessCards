@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<div *ngFor=\"let card of businessCards; let i = index\" [attr.data-index]=\"i\"> \n  <div class = \"cardBox\"><a></a> \n    <div class = \"cardHeader\">{{card.firstname}} {{card.lastname}}</div>\n    <div class = \"cardBody0\">{{card.title}}</div>\n    <div class = \"cardBody1\">{{card.Company}}</div>\n    <div class = \"cardBody2\">{{card.address}}</div>\n    <div class = \"cardBody3\"><i class=\"fa fa-mobile\"></i>&#160;{{card.phonenumber}}</div>\n    <div class = \"cardBody4\"><i class=\"fa fa-envelope-o\"></i>&#160;{{card.email}}</div>\n  </div>\n \n  <button class=\"editBtn\" (click)=\"openEditForm(this.card)\">\n      <i class=\"fa fa-edit\"></i><br>Update</button>\n      <button class=\"deleteBtn\" (click)=\"delete(this.card)\">\n      <i class=\"fa fa-trash\"></i><br>Delete</button>\n   \n  <span *ngIf=\"card.id==tmpID\">\n      <div class=\"editCard\">\n        <h3 class = \"editHeader\">Update Form</h3>\n        <span>\n            <button style=\"margin-left: 40%\" (click)=\"update(card)\">\n                <i class=\"fa fa-check-circle\"></i>&#160;Update\n              </button>\n              <button style=\"margin-left:5%\" (click)=\"closeEditForm()\">\n                  <i class=\"fa fa-window-close\"></i>&#160;Exit\n                </button>\n              </span>\n        <div class=\"editForm mt-2\">\n          <div class=\"pr-2\">\n            <label class=\"editFont\" for=\"firstname\">Firstname:</label>\n            <input class=\"form-control mr-2\" [(ngModel)]=\"card.firstname\">\n            <label class=\"editFont\" for=\"lastname\">Lastname:</label>\n            <input class=\"form-control\" [(ngModel)]=\"card.lastname\">\n          </div>\n        </div>\n\n        <div class=\"editForm\">\n            <div class=\"title-form pr-2\">\n              <label class=\"editFont\" for=\"title\">Title:</label>\n              <input class=\"form-control\">\n            </div>\n            <div>\n              <label class=\"editFont\" for=\"firm\">Company:</label>\n              <input class=\"form-control\">\n            </div>\n          </div>\n\n        <div class=\"editForm\">\n            <div class=\"address-form\">\n              <label class=\"editFont\" for=\"address\">Address: </label>\n              <input class=\"form-control mr-2\">\n            </div>\n        </div>\n        <div class=\"editForm\">\n          <div class=\"email-form pr-2\">\n            <label class=\"editFont\" for=\"email\">Email: </label>\n            <input class=\"form-control\" [(ngModel)]=\"card.email\">\n          </div>\n          <div class=\"phone-form\">\n            <label class=\"editFont\" for=\"phoneNumber\">Tel:</label>\n            <input class=\"form-control\" [(ngModel)]=\"card.phoneNumber\">\n            <br>\n          </div>\n        </div>\n      </div>\n    </span> \n  </div>\n\n  \n\n   \n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div *ngFor=\"let bc of cardsList\"> \n  <span class = \"cardBox\"><a></a> \n    <div class = \"cardHeader\">{{bc.firstname}} {{bc.lastname}}</div>\n    <div class = \"cardBody0\">{{bc.title}}</div>\n    <div class = \"cardBody1\">{{bc.company}}</div>\n    <div class = \"cardBody2\">{{bc.address}}</div>\n    <div class = \"cardBody3\"><i class=\"fa fa-mobile\"></i>&#160;{{bc.phonenumber}}</div>\n    <div class = \"cardBody4\"><i class=\"fa fa-envelope-o\"></i>&#160;{{bc.email}}</div>\n    </span>\n\n    <button class=\"updateBtn\" (click)=\"startUpdate(this.bc)\">\n        <i class=\"fa fa-edit fa-1x\"></i><br>Update</button>\n      <button class=\"deleteBtn\" (click)=\"removeMyCard(this.bc)\">\n      <i class=\"fa fa-trash fa-1x\"></i><br>Delete</button>\n   \n  <span *ngIf=\"bc.cardIndex==selectedCardID && selectedCardID!='exit'\">\n      <div class=\"editCard\">\n        <h3 class = \"editHeader\">Update Form</h3>\n        <div>\n            <button class=\"submitBtn\" (click)=\"updateMyCard(bc)\">&#160;Submit\n                <i class=\"fa fa-chevron-right\"></i>\n              </button>\n              <button class =\"exitBtn\" (click)=\"stopUpdate()\">&#160;Exit\n                  <i class=\"fa fa-window-close\"></i>\n                </button>\n              </div>\n        <div class=\"editForm mt-2\">\n          <div class=\"pr-2\">\n            <label class=\"editFont\" for=\"firstname\">Firstname:</label>\n            <input class=\"form-control mr-2\" name = \"firstname\" [(ngModel)]=\"bc.firstname\">\n            <label class=\"editFont\" for=\"lastname\">Lastname:</label>\n            <input class=\"form-control\" name = \"lastname\"  [(ngModel)]=\"bc.lastname\">\n          </div>\n        </div>\n\n        <div class=\"editForm\">\n            <div class=\"title-form pr-2\">\n              <label class=\"editFont\" for=\"title\">Title:</label>\n              <input class=\"form-control\" name = \"title\" [(ngModel)]=\"bc.title\">\n            </div>\n            <div>\n              <label class=\"editFont\" for=\"firm\">Company:</label>\n              <input class=\"form-control\" name = \"firm\" [(ngModel)]=\"bc.company\">\n            </div>\n          </div>\n\n        <div class=\"editForm\">\n            <div class=\"address-form\">\n              <label class=\"editFont\" for=\"address\">Address: </label>\n              <input class=\"form-control mr-2\" name = \"address\" [(ngModel)]=\"bc.address\">\n            </div>\n        </div>\n        <div class=\"editForm\">\n          <div class=\"email-form pr-2\">\n            <label class=\"editFont\" for=\"email\">Email: </label>\n            <input class=\"form-control\" name = \"email\" [(ngModel)]=\"bc.email\">\n          </div>\n          <div class=\"phone-form\">\n            <label class=\"editFont\" for=\"phoneNumber\">Tel:</label>\n            <input class=\"form-control\" name = \"phonenumber\" [(ngModel)]=\"bc.phonenumber\">\n            <br>\n          </div>\n        </div>\n      </div>\n    </span> \n  </div>\n\n  \n\n   \n\n\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"background-color: rgb(0, 0, 0)\">\n    <br>\n<div class = \"sampleBox\" ><a></a>\n  <div class = \"sampleBody1\">\n    <img src=\"/assets/images/sampleicon.png\" />\n</div>\n  <div class = \"sampleBody2\">MY | BUSINESS | CARDS</div>\n  </div>\n    \n<app-businessCard [businessCards]=\"businessCards\"></app-businessCard>\n</div>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"background-color: rgb(0, 0, 0)\">\n    <br>\n    <span>\n    <button class=\"clearAllBtn\" (click)=\"clearAllCards()\">\n        <i class=\"fa fa-times fa-2x\"></i><br>CLEAR ALL CARDS</button>\n<div class = \"sampleBox\" ><a></a>\n  <div class = \"sampleBody1\">\n    <img src=\"/assets/images/sampleicon.png\" />\n</div>\n  <div class = \"sampleBody2\">MY | BUSINESS | CARDS</div>\n  </div>\n</span>\n  \n<app-businessCard [cardsList]=\"cardsList\"></app-businessCard>\n</div>\n\n");
 
 /***/ }),
 
@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<span>\n      <button class=\"camera-btn\" (click)=\"triggerSnapshot()\">\n          Click To Snap\n          <i class=\"fa fa-camera fa-3x\" aria-hidden=\"true\"></i></button>\n      </span>\n<div class = \"myImage\">\n<webcam [height]=\"290\" \n[trigger]=\"triggerObservable\"\n(imageCapture)=\"handleImage($event)\" \n(initError)=\"handleInitError($event)\"\n[imageQuality]=\"1\"></webcam>\n</div>\n\n\n<div id=\"snapshot\" class=\"snapshot mt-5\" *ngIf=\"webcamImage\"> \n    <span>\n        <button class=\"okBtn\" (click)=\"convertToBase64()\">Add Card&#160;<i class=\"fa fa-check-circle\"></i></button>\n        <button class=\"retakeBtn\" (click)=\"webcamImage=null\">Retake&#160;&#160;<i class=\"fa fa-camera\"></i></button>\n    </span>\n        <div class = \"myImage\">\n          <img [src]=\"webcamImage.imageAsDataUrl\" id=\"image\"/>\n           </div>\n        \n          </div>\n\n\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<span>\n      <button class=\"camera-btn\" (click)=\"takeSnapShot()\">\n          Click To Snap\n          <i class=\"fa fa-camera fa-3x\" aria-hidden=\"true\"></i></button>\n      </span>\n\n<div class = \"myImage\">\n<webcam [height]=\"290\" \n[trigger]=\"observeSnapShot\"\n(imageCapture)=\"getMyImage($event)\" \n(initError)=\"getImageError($event)\">\n</webcam>\n</div>\n\n<div id=\"snapshot\" class=\"snapshot mt-5\" *ngIf=\"myWebcamPic\"> \n    <span>\n        <button class=\"okBtn\" (click)=\" detectTextImage()\">Add Card&#160;<i class=\"fa fa-check-circle\"></i></button>\n        <button class=\"retakeBtn\" (click)=\"retakePhoto()\">Retake&#160;&#160;<i class=\"fa fa-camera\"></i></button>\n    </span>\n        <div class = \"myImage\"> <img id=\"image\" [src]=\"myWebcamPic.imageAsDataUrl\"/></div>\n        \n</div>\n\n\n\n\n");
 
 /***/ }),
 
@@ -162,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <br>\n    <br>\n<div class=\"col-sm-5 webcam\">\n  <app-webcam *ngIf=\"onWebcam\" (imageBase64)=\"receiveWebcamImage($event)\" (textDetection)=\"receiveTextDetection($event)\"></app-webcam>\n  <div>\n      <div class = \"imageHeaderBox\">\n<div class=\"form-group business-card-form\">\n    <div style=\"width: 305px;\">\n      <label class=\"cardHeader\"for=\"image\"><i class=\"fa fa-address-card\"></i>&#160;&#160;MY | CARD | IMAGE </label><br><br>\n      <input class=\"form-control mr-2\" placeholder=\"image url\" [(ngModel)]=\"businessCard.image\" name=\"image\">\n    </div>\n    <div class=\"formgroup\" style=\"margin-top: 32px; margin-left: 10px;\">\n      <button class=\"webcamBtn\" (click)=\"toggleWebcam()\">Start Webcam</button>\n      <button class=\"stopwebcamBtn\" (click)=\"toggleWebcam()\">Stop Webcam</button>\n    </div>\n</div>\n</div>\n<div *ngIf=\"businessCard.cardImage\">\n    <img [src]=\"businessCard.image\" alt=\"BusinessCardImage\" style=\"width:405px; height:250px; margin-left: 40px;\">\n  </div>\n</div>\n\n\n  \n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <br>\n    <br>\n<div class=\"col-sm-5 webcam\">\n  <app-webcam *ngIf=\"isWebcamON\" \n  (snapshot)=\"setImage($event)\" \n  (snaptext)=\"getTextImage($event)\">\n</app-webcam>\n  <div>\n      <div class = \"imageHeaderBox\">\n      <h2 class=\"cardHeader\"for=\"image\"><i class=\"fa fa-address-card\">\n      </i>&#160;&#160;MY | CARD | IMAGE </h2>\n      <button class=\"webcamBtn\" (click)=\"openWebcam()\">Start Webcam</button>\n      <button class=\"stopwebcamBtn\" (click)=\"openWebcam()\">Stop Webcam</button>\n</div>\n</div>\n</div>\n\n\n\n  \n");
 
 /***/ }),
 
@@ -667,7 +667,7 @@ Authguard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n.close {\n  width: 10px;\n  height: 10px;\n  margin-right: .5em;\n}\n\n.editForm {\n  display: flex;\n  margin-top: 2%;\n  margin-left: 2%;\n  margin-right: 10px;\n}\n\n.cardBox {\n  display: inline-table;\n  position: relative;\n  background-color: white;\n  border: 6px solid rgba(255, 119, 0, 0.897);\n  color: black;\n  left: 22%; \n  margin-top: 1%;\n  margin-bottom: 1%;\n  width: 400px;\n  height: 180px; \n  font-family: \"Times New Roman\", Times, serif;\n  padding: 20px;\n  \n}\n\n.cardHeader {\n  position: relative;\n  text-align: center;\n  color: rgb(247, 119, 7);\n  font-weight: bold;\n  font-size:24px;\n  font-family: \"Times New Roman\", Times, serif; \n}\n\n.cardBody0{\n  position: relative;\n  text-align: center;\n  color:black;\n  font-style: italic;\n  font-size: 16px;\n}\n\n.cardBody1{\n  position: relative;\n  text-align: left;\n  margin-top: 4%;\n  color: black;\n  font-weight: bold;\n  font-style: normal;\n  font-size: 16px;\n}\n\n.cardBody2{\n  position: relative;\n  text-align: left;\n  color:black;\n  font-weight: normal;\n  font-size: 14px;\n}\n\n.cardBody3{\n  position: relative;\n  text-align: left;\n  color: black;\n  font-weight: normal;\n  font-size: 14px;  \n}\n\n.cardBody4{\n  position: relative;\n  text-align: left;\n  color: black;\n  font-weight: normal;\n  font-size: 14px;  \n}\n\n.editBtn{\n  background-color: rgba(255, 119, 0, 0.897);\n  color: white;\n  font-family: \"Times New Roman\", Times, serif;\n  border: 3px solid white;\n  font-weight: normal;\n  font-size: 15px; \n  position: relative;\n  padding: 9px 18px;\n  transition: .5s ease;\n  top: 20%;\n  left: 25%;  \n}\n\n.editCard{\n  background-color: rgb(241, 220, 201);\n  border: 5px solid rgb(155, 114, 77);\n  display: inline-block;\n  max-width: 350px;\n  position: fixed;\n  padding: 9px 26px;\n  transition: .5s ease;\n  bottom: 10%;\n  left: 2%;  \n  \n   \n}\n\n.editHeader{\n  color:black;\n  font-family: \"Times New Roman\", Times, serif;\n  font-weight: bold;\n  font-size: 18px;\n}\n\n.editFont{\n  color:black;\n  font-family: \"Times New Roman\", Times, serif;\n  font-weight: bold;\n  font-size: 16px;\n}\n\n.deleteBtn{\n  background-color: black;\n  color: white;\n  font-weight: normal;\n  border: 3px solid white;\n  font-family: \"Times New Roman\", Times, serif;\n  font-size: 15px; \n  position: relative;\n  padding: 9px 18px;\n  transition: .5s ease;\n  left: 28%;  \n}\n\n\n\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYnVzaW5lc3NjYXJkL2J1c2luZXNzY2FyZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsYUFBYTtFQUNiLGNBQWM7RUFDZCxlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UscUJBQXFCO0VBQ3JCLGtCQUFrQjtFQUNsQix1QkFBdUI7RUFDdkIsMENBQTBDO0VBQzFDLFlBQVk7RUFDWixTQUFTO0VBQ1QsY0FBYztFQUNkLGlCQUFpQjtFQUNqQixZQUFZO0VBQ1osYUFBYTtFQUNiLDRDQUE0QztFQUM1QyxhQUFhOztBQUVmOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQix1QkFBdUI7RUFDdkIsaUJBQWlCO0VBQ2pCLGNBQWM7RUFDZCw0Q0FBNEM7QUFDOUM7O0FBQ0E7RUFDRSxrQkFBa0I7RUFDbEIsa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsZUFBZTtBQUNqQjs7QUFDQTtFQUNFLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLGVBQWU7QUFDakI7O0FBQ0E7RUFDRSxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLFdBQVc7RUFDWCxtQkFBbUI7RUFDbkIsZUFBZTtBQUNqQjs7QUFDQTtFQUNFLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixlQUFlO0FBQ2pCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLGVBQWU7QUFDakI7O0FBRUE7RUFDRSwwQ0FBMEM7RUFDMUMsWUFBWTtFQUNaLDRDQUE0QztFQUM1Qyx1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixRQUFRO0VBQ1IsU0FBUztBQUNYOztBQUVBO0VBQ0Usb0NBQW9DO0VBQ3BDLG1DQUFtQztFQUNuQyxxQkFBcUI7RUFDckIsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsb0JBQW9CO0VBQ3BCLFdBQVc7RUFDWCxRQUFROzs7QUFHVjs7QUFDQTtFQUNFLFdBQVc7RUFDWCw0Q0FBNEM7RUFDNUMsaUJBQWlCO0VBQ2pCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsNENBQTRDO0VBQzVDLGlCQUFpQjtFQUNqQixlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsdUJBQXVCO0VBQ3ZCLFlBQVk7RUFDWixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDRDQUE0QztFQUM1QyxlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsU0FBUztBQUNYIiwiZmlsZSI6InNyYy9hcHAvYnVzaW5lc3NjYXJkL2J1c2luZXNzY2FyZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4uY2xvc2Uge1xuICB3aWR0aDogMTBweDtcbiAgaGVpZ2h0OiAxMHB4O1xuICBtYXJnaW4tcmlnaHQ6IC41ZW07XG59XG5cbi5lZGl0Rm9ybSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIG1hcmdpbi10b3A6IDIlO1xuICBtYXJnaW4tbGVmdDogMiU7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbn1cblxuLmNhcmRCb3gge1xuICBkaXNwbGF5OiBpbmxpbmUtdGFibGU7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gIGJvcmRlcjogNnB4IHNvbGlkIHJnYmEoMjU1LCAxMTksIDAsIDAuODk3KTtcbiAgY29sb3I6IGJsYWNrO1xuICBsZWZ0OiAyMiU7IFxuICBtYXJnaW4tdG9wOiAxJTtcbiAgbWFyZ2luLWJvdHRvbTogMSU7XG4gIHdpZHRoOiA0MDBweDtcbiAgaGVpZ2h0OiAxODBweDsgXG4gIGZvbnQtZmFtaWx5OiBcIlRpbWVzIE5ldyBSb21hblwiLCBUaW1lcywgc2VyaWY7XG4gIHBhZGRpbmc6IDIwcHg7XG4gIFxufVxuXG4uY2FyZEhlYWRlciB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogcmdiKDI0NywgMTE5LCA3KTtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGZvbnQtc2l6ZToyNHB4O1xuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmOyBcbn1cbi5jYXJkQm9keTB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjpibGFjaztcbiAgZm9udC1zdHlsZTogaXRhbGljO1xuICBmb250LXNpemU6IDE2cHg7XG59XG4uY2FyZEJvZHkxe1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIG1hcmdpbi10b3A6IDQlO1xuICBjb2xvcjogYmxhY2s7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtc2l6ZTogMTZweDtcbn1cbi5jYXJkQm9keTJ7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgY29sb3I6YmxhY2s7XG4gIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cbi5jYXJkQm9keTN7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgY29sb3I6IGJsYWNrO1xuICBmb250LXdlaWdodDogbm9ybWFsO1xuICBmb250LXNpemU6IDE0cHg7ICBcbn1cblxuLmNhcmRCb2R5NHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBjb2xvcjogYmxhY2s7XG4gIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gIGZvbnQtc2l6ZTogMTRweDsgIFxufVxuXG4uZWRpdEJ0bntcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNTUsIDExOSwgMCwgMC44OTcpO1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtZmFtaWx5OiBcIlRpbWVzIE5ldyBSb21hblwiLCBUaW1lcywgc2VyaWY7XG4gIGJvcmRlcjogM3B4IHNvbGlkIHdoaXRlO1xuICBmb250LXdlaWdodDogbm9ybWFsO1xuICBmb250LXNpemU6IDE1cHg7IFxuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHBhZGRpbmc6IDlweCAxOHB4O1xuICB0cmFuc2l0aW9uOiAuNXMgZWFzZTtcbiAgdG9wOiAyMCU7XG4gIGxlZnQ6IDI1JTsgIFxufVxuXG4uZWRpdENhcmR7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDEsIDIyMCwgMjAxKTtcbiAgYm9yZGVyOiA1cHggc29saWQgcmdiKDE1NSwgMTE0LCA3Nyk7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWF4LXdpZHRoOiAzNTBweDtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBwYWRkaW5nOiA5cHggMjZweDtcbiAgdHJhbnNpdGlvbjogLjVzIGVhc2U7XG4gIGJvdHRvbTogMTAlO1xuICBsZWZ0OiAyJTsgIFxuICBcbiAgIFxufVxuLmVkaXRIZWFkZXJ7XG4gIGNvbG9yOmJsYWNrO1xuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAxOHB4O1xufVxuXG4uZWRpdEZvbnR7XG4gIGNvbG9yOmJsYWNrO1xuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAxNnB4O1xufVxuXG4uZGVsZXRlQnRue1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXdlaWdodDogbm9ybWFsO1xuICBib3JkZXI6IDNweCBzb2xpZCB3aGl0ZTtcbiAgZm9udC1mYW1pbHk6IFwiVGltZXMgTmV3IFJvbWFuXCIsIFRpbWVzLCBzZXJpZjtcbiAgZm9udC1zaXplOiAxNXB4OyBcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBwYWRkaW5nOiA5cHggMThweDtcbiAgdHJhbnNpdGlvbjogLjVzIGVhc2U7XG4gIGxlZnQ6IDI4JTsgIFxufVxuXG5cblxuXG4iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n.close {\n  width: 10px;\n  height: 10px;\n  margin-right: .5em;\n}\n\n.editForm {\n  display: flex;\n  margin-top: 2%;\n  margin-left: 2%;\n  margin-right: 10px;\n}\n\n.cardBox {\n  display: inline-table;\n  position: relative;\n  background-color: white;\n  border: 6px solid rgba(255, 119, 0, 0.897);\n  color: black;\n  left: 33%; \n  margin-top: 1%;\n  margin-bottom: 1%;\n  width: 400px;\n  height: 180px; \n  font-family: \"Times New Roman\", Times, serif;\n  padding: 20px;\n  \n}\n\n.cardHeader {\n  position: relative;\n  text-align: center;\n  color: rgb(247, 119, 7);\n  font-weight: bold;\n  font-size:24px;\n  font-family: \"Times New Roman\", Times, serif; \n}\n\n.cardBody0{\n  position: relative;\n  text-align: center;\n  color:black;\n  font-style: italic;\n  font-size: 16px;\n}\n\n.cardBody1{\n  position: relative;\n  text-align: left;\n  margin-top: 4%;\n  color: black;\n  font-weight: bold;\n  font-style: normal;\n  font-size: 16px;\n}\n\n.cardBody2{\n  position: relative;\n  text-align: left;\n  color:black;\n  font-weight: normal;\n  font-size: 14px;\n}\n\n.cardBody3{\n  position: relative;\n  text-align: left;\n  color: black;\n  font-weight: normal;\n  font-size: 14px;  \n}\n\n.cardBody4{\n  position: relative;\n  text-align: left;\n  color: black;\n  font-weight: normal;\n  font-size: 14px;  \n}\n\n.editCard{\n  background-color: rgb(241, 220, 201);\n  border: 5px solid rgb(155, 114, 77);\n  display: inline-block;\n  max-width: 350px;\n  position: fixed;\n  padding: 9px 26px;\n  transition: .5s ease;\n  bottom: 10%;\n  left: 2%;  \n  \n   \n}\n\n.editHeader{\n  color:black;\n  font-family: \"Times New Roman\", Times, serif;\n  font-weight: bold;\n  font-size: 18px;\n}\n\n.editFont{\n  color:black;\n  font-family: \"Times New Roman\", Times, serif;\n  font-weight: bold;\n  font-size: 16px;\n}\n\n.updateBtn{\n  background-color: rgba(255, 119, 0, 0.897);\n  color: white;\n  font-family: \"Times New Roman\", Times, serif;\n  border: 3px solid white;\n  font-weight: normal;\n  font-size: 15px; \n  position: relative;\n  padding: 9px 18px;\n  transition: .5s ease;\n  top: 0%;\n  left: 35%;  \n  border-radius: 7px;\n}\n\n.updateBtn:hover{\n  background-color:  rgb(67, 152, 6);\n}\n\n.deleteBtn:hover{\n  background-color:  red;\n}\n\n.deleteBtn{\n  background-color: rgb(22, 15, 4);\n  color: white;\n  font-weight: normal;\n  border: 3px solid white;\n  font-family: \"Times New Roman\", Times, serif;\n  font-size: 15px; \n  position: relative;\n  padding: 9px 18px;\n  transition: .5s ease;\n  left: 37%;  \n  border-radius: 7px;\n}\n\n.exitBtn{\n  background: red;\n  margin-left:5%;\n  color: white;\n  padding: 5px 12px;\n  border-radius: 5px;\n  border: 3px solid rgba(222, 3, 3, 0.584);\n}\n\n.submitBtn{\n  background: green;\n  margin-left:30%;\n  color: white;\n  padding: 5px 7px;\n  border-radius: 5px;\n  border: 3px solid rgba(2, 103, 2, 0.632);\n}\n\n\n\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYnVzaW5lc3NjYXJkL2J1c2luZXNzY2FyZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsYUFBYTtFQUNiLGNBQWM7RUFDZCxlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UscUJBQXFCO0VBQ3JCLGtCQUFrQjtFQUNsQix1QkFBdUI7RUFDdkIsMENBQTBDO0VBQzFDLFlBQVk7RUFDWixTQUFTO0VBQ1QsY0FBYztFQUNkLGlCQUFpQjtFQUNqQixZQUFZO0VBQ1osYUFBYTtFQUNiLDRDQUE0QztFQUM1QyxhQUFhOztBQUVmOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQix1QkFBdUI7RUFDdkIsaUJBQWlCO0VBQ2pCLGNBQWM7RUFDZCw0Q0FBNEM7QUFDOUM7O0FBQ0E7RUFDRSxrQkFBa0I7RUFDbEIsa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsZUFBZTtBQUNqQjs7QUFDQTtFQUNFLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLGVBQWU7QUFDakI7O0FBQ0E7RUFDRSxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLFdBQVc7RUFDWCxtQkFBbUI7RUFDbkIsZUFBZTtBQUNqQjs7QUFDQTtFQUNFLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixlQUFlO0FBQ2pCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxvQ0FBb0M7RUFDcEMsbUNBQW1DO0VBQ25DLHFCQUFxQjtFQUNyQixnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsV0FBVztFQUNYLFFBQVE7OztBQUdWOztBQUNBO0VBQ0UsV0FBVztFQUNYLDRDQUE0QztFQUM1QyxpQkFBaUI7RUFDakIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCw0Q0FBNEM7RUFDNUMsaUJBQWlCO0VBQ2pCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSwwQ0FBMEM7RUFDMUMsWUFBWTtFQUNaLDRDQUE0QztFQUM1Qyx1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixPQUFPO0VBQ1AsU0FBUztFQUNULGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGtDQUFrQztBQUNwQzs7QUFDQTtFQUNFLHNCQUFzQjtBQUN4Qjs7QUFDQTtFQUNFLGdDQUFnQztFQUNoQyxZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2Qiw0Q0FBNEM7RUFDNUMsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsb0JBQW9CO0VBQ3BCLFNBQVM7RUFDVCxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsY0FBYztFQUNkLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLHdDQUF3QztBQUMxQzs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2YsWUFBWTtFQUNaLGdCQUFnQjtFQUNoQixrQkFBa0I7RUFDbEIsd0NBQXdDO0FBQzFDIiwiZmlsZSI6InNyYy9hcHAvYnVzaW5lc3NjYXJkL2J1c2luZXNzY2FyZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4uY2xvc2Uge1xuICB3aWR0aDogMTBweDtcbiAgaGVpZ2h0OiAxMHB4O1xuICBtYXJnaW4tcmlnaHQ6IC41ZW07XG59XG5cbi5lZGl0Rm9ybSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIG1hcmdpbi10b3A6IDIlO1xuICBtYXJnaW4tbGVmdDogMiU7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbn1cblxuLmNhcmRCb3gge1xuICBkaXNwbGF5OiBpbmxpbmUtdGFibGU7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gIGJvcmRlcjogNnB4IHNvbGlkIHJnYmEoMjU1LCAxMTksIDAsIDAuODk3KTtcbiAgY29sb3I6IGJsYWNrO1xuICBsZWZ0OiAzMyU7IFxuICBtYXJnaW4tdG9wOiAxJTtcbiAgbWFyZ2luLWJvdHRvbTogMSU7XG4gIHdpZHRoOiA0MDBweDtcbiAgaGVpZ2h0OiAxODBweDsgXG4gIGZvbnQtZmFtaWx5OiBcIlRpbWVzIE5ldyBSb21hblwiLCBUaW1lcywgc2VyaWY7XG4gIHBhZGRpbmc6IDIwcHg7XG4gIFxufVxuXG4uY2FyZEhlYWRlciB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogcmdiKDI0NywgMTE5LCA3KTtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGZvbnQtc2l6ZToyNHB4O1xuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmOyBcbn1cbi5jYXJkQm9keTB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjpibGFjaztcbiAgZm9udC1zdHlsZTogaXRhbGljO1xuICBmb250LXNpemU6IDE2cHg7XG59XG4uY2FyZEJvZHkxe1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIG1hcmdpbi10b3A6IDQlO1xuICBjb2xvcjogYmxhY2s7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtc2l6ZTogMTZweDtcbn1cbi5jYXJkQm9keTJ7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgY29sb3I6YmxhY2s7XG4gIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cbi5jYXJkQm9keTN7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgY29sb3I6IGJsYWNrO1xuICBmb250LXdlaWdodDogbm9ybWFsO1xuICBmb250LXNpemU6IDE0cHg7ICBcbn1cblxuLmNhcmRCb2R5NHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBjb2xvcjogYmxhY2s7XG4gIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gIGZvbnQtc2l6ZTogMTRweDsgIFxufVxuXG4uZWRpdENhcmR7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDEsIDIyMCwgMjAxKTtcbiAgYm9yZGVyOiA1cHggc29saWQgcmdiKDE1NSwgMTE0LCA3Nyk7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWF4LXdpZHRoOiAzNTBweDtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBwYWRkaW5nOiA5cHggMjZweDtcbiAgdHJhbnNpdGlvbjogLjVzIGVhc2U7XG4gIGJvdHRvbTogMTAlO1xuICBsZWZ0OiAyJTsgIFxuICBcbiAgIFxufVxuLmVkaXRIZWFkZXJ7XG4gIGNvbG9yOmJsYWNrO1xuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAxOHB4O1xufVxuXG4uZWRpdEZvbnR7XG4gIGNvbG9yOmJsYWNrO1xuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAxNnB4O1xufVxuXG4udXBkYXRlQnRue1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMTE5LCAwLCAwLjg5Nyk7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1mYW1pbHk6IFwiVGltZXMgTmV3IFJvbWFuXCIsIFRpbWVzLCBzZXJpZjtcbiAgYm9yZGVyOiAzcHggc29saWQgd2hpdGU7XG4gIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gIGZvbnQtc2l6ZTogMTVweDsgXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgcGFkZGluZzogOXB4IDE4cHg7XG4gIHRyYW5zaXRpb246IC41cyBlYXNlO1xuICB0b3A6IDAlO1xuICBsZWZ0OiAzNSU7ICBcbiAgYm9yZGVyLXJhZGl1czogN3B4O1xufVxuXG4udXBkYXRlQnRuOmhvdmVye1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAgcmdiKDY3LCAxNTIsIDYpO1xufVxuLmRlbGV0ZUJ0bjpob3ZlcntcbiAgYmFja2dyb3VuZC1jb2xvcjogIHJlZDtcbn1cbi5kZWxldGVCdG57XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyMiwgMTUsIDQpO1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gIGJvcmRlcjogM3B4IHNvbGlkIHdoaXRlO1xuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmO1xuICBmb250LXNpemU6IDE1cHg7IFxuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHBhZGRpbmc6IDlweCAxOHB4O1xuICB0cmFuc2l0aW9uOiAuNXMgZWFzZTtcbiAgbGVmdDogMzclOyAgXG4gIGJvcmRlci1yYWRpdXM6IDdweDtcbn1cblxuLmV4aXRCdG57XG4gIGJhY2tncm91bmQ6IHJlZDtcbiAgbWFyZ2luLWxlZnQ6NSU7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgcGFkZGluZzogNXB4IDEycHg7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgYm9yZGVyOiAzcHggc29saWQgcmdiYSgyMjIsIDMsIDMsIDAuNTg0KTtcbn1cblxuLnN1Ym1pdEJ0bntcbiAgYmFja2dyb3VuZDogZ3JlZW47XG4gIG1hcmdpbi1sZWZ0OjMwJTtcbiAgY29sb3I6IHdoaXRlO1xuICBwYWRkaW5nOiA1cHggN3B4O1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIGJvcmRlcjogM3B4IHNvbGlkIHJnYmEoMiwgMTAzLCAyLCAwLjYzMik7XG59XG5cblxuXG5cbiJdfQ== */");
 
 /***/ }),
 
@@ -684,43 +684,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_businesscards_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/businesscards.service */ "./src/app/services/businesscards.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
 let BusinessCardComponent = class BusinessCardComponent {
-    constructor(businessCardsService) {
+    constructor(router, businessCardsService) {
+        this.router = router;
         this.businessCardsService = businessCardsService;
     }
-    ngOnInit() {
-        this.tmpID = '';
-        this.closeForm = true;
+    sortedCards() {
+        return this.cardsList.sort();
     }
-    openEditForm(card) {
-        this.tmpID = card.id;
-        console.log(card.id);
+    startUpdate(selectedcard) {
+        this.selectedCardID = selectedcard.cardIndex;
+        console.log("Updating card# " + selectedcard.cardIndex);
     }
-    closeEditForm() {
-        this.tmpID = '';
+    stopUpdate() {
+        this.selectedCardID = "exit";
     }
-    update(card) {
-        this.businessCardsService.updateMyCard(card, card.id)
-            .then(res => {
-            console.log('Successfully UPDATED!');
-        })
-            .catch(err => {
-            console.log('Fail to UPDATE a particular business card :(');
-        });
+    updateMyCard(selectedcard) {
+        this.businessCardsService.updateMyCard(selectedcard, selectedcard.cardIndex);
+        alert("Your card has been UPDATED!");
+        this.stopUpdate();
     }
-    delete(card) {
-        this.businessCardsService.removeMyCard(card.id);
+    removeMyCard(selectedcard) {
+        console.log("Removing card# " + selectedcard.cardIndex);
+        this.businessCardsService.removeMyCard(selectedcard, selectedcard.cardIndex);
     }
+    ngOnInit() { }
 };
 BusinessCardComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
     { type: _services_businesscards_service__WEBPACK_IMPORTED_MODULE_2__["BusinesscardsService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], BusinessCardComponent.prototype, "businessCards", void 0);
+], BusinessCardComponent.prototype, "cardsList", void 0);
 BusinessCardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-businessCard',
@@ -742,7 +743,7 @@ BusinessCardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n\n.sampleHeader {\n  position: relative;\n  left: 18%;  \n  top: 5%;\n  color: white;\n  font-weight: bold;\n  font-size:35px;\n  font-family: \"Times New Roman\", Times, serif; \n}\n\n.sampleBox {\n  position: relative;\n  background-color: rgb(247, 119, 7);\n  color: black;\n  left: 31.5%; \n  width: 400px;\n  height: 220px; \n  font-family: \"Times New Roman\", Times, serif;\n  border: 5px solid rgb(255, 255, 255);\n  padding: 20px;\n  margin: 20px;\n}\n\n.sampleBody1{\n  position: relative;\n  top: 5%;\n  left: 30%;  \n  font-weight: bold;\n  font-size: 38px;\n}\n\n.sampleBody2{\n  position: relative;\n  top: 11%;\n  left: 22%; \n  color: black;\n  font-weight: bold;\n  font-size: 18px;  \n} \n\n\n\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYnVzaW5lc3NjYXJkcy9idXNpbmVzc2NhcmRzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsT0FBTztFQUNQLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsY0FBYztFQUNkLDRDQUE0QztBQUM5Qzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixrQ0FBa0M7RUFDbEMsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBQ1osYUFBYTtFQUNiLDRDQUE0QztFQUM1QyxvQ0FBb0M7RUFDcEMsYUFBYTtFQUNiLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixPQUFPO0VBQ1AsU0FBUztFQUNULGlCQUFpQjtFQUNqQixlQUFlO0FBQ2pCOztBQUNBO0VBQ0Usa0JBQWtCO0VBQ2xCLFFBQVE7RUFDUixTQUFTO0VBQ1QsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQixlQUFlO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvYnVzaW5lc3NjYXJkcy9idXNpbmVzc2NhcmRzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcblxuLnNhbXBsZUhlYWRlciB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgbGVmdDogMTglOyAgXG4gIHRvcDogNSU7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGZvbnQtc2l6ZTozNXB4O1xuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmOyBcbn1cblxuLnNhbXBsZUJveCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI0NywgMTE5LCA3KTtcbiAgY29sb3I6IGJsYWNrO1xuICBsZWZ0OiAzMS41JTsgXG4gIHdpZHRoOiA0MDBweDtcbiAgaGVpZ2h0OiAyMjBweDsgXG4gIGZvbnQtZmFtaWx5OiBcIlRpbWVzIE5ldyBSb21hblwiLCBUaW1lcywgc2VyaWY7XG4gIGJvcmRlcjogNXB4IHNvbGlkIHJnYigyNTUsIDI1NSwgMjU1KTtcbiAgcGFkZGluZzogMjBweDtcbiAgbWFyZ2luOiAyMHB4O1xufVxuXG4uc2FtcGxlQm9keTF7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdG9wOiA1JTtcbiAgbGVmdDogMzAlOyAgXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBmb250LXNpemU6IDM4cHg7XG59XG4uc2FtcGxlQm9keTJ7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdG9wOiAxMSU7XG4gIGxlZnQ6IDIyJTsgXG4gIGNvbG9yOiBibGFjaztcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGZvbnQtc2l6ZTogMThweDsgIFxufSBcblxuXG5cblxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n.clearAllBtn:hover{\n  background-color:  rgb(255, 2, 2);\n}\n.clearAllBtn{\n  background-color: rgb(201, 0, 0);\n  color: white;\n  font-weight: bold;\n  border: 3px solid white;\n  font-family: \"Times New Roman\", Times, serif;\n  font-size: 15px; \n  position: relative;\n  padding: 9px 18px;\n  transition: .5s ease;\n  left: 62%;  \n  border-radius: 7px;\n}\n.sampleHeader {\n  position: relative;\n  left: 18%;  \n  top: 5%;\n  color: white;\n  font-weight: bold;\n  font-size:35px;\n  font-family: \"Times New Roman\", Times, serif; \n}\n.sampleBox {\n  position: relative;\n  background-color: rgb(247, 119, 7);\n  color: black;\n  left: 31.5%; \n  width: 400px;\n  height: 220px; \n  font-family: \"Times New Roman\", Times, serif;\n  border: 5px solid rgb(255, 255, 255);\n  padding: 20px;\n  margin: 20px;\n}\n.sampleBody1{\n  position: relative;\n  top: 5%;\n  left: 30%;  \n  font-weight: bold;\n  font-size: 38px;\n}\n.sampleBody2{\n  position: relative;\n  top: 11%;\n  left: 22%; \n  color: black;\n  font-weight: bold;\n  font-size: 18px;  \n} \n\n\n\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYnVzaW5lc3NjYXJkcy9idXNpbmVzc2NhcmRzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0VBQ0UsaUNBQWlDO0FBQ25DO0FBQ0E7RUFDRSxnQ0FBZ0M7RUFDaEMsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQix1QkFBdUI7RUFDdkIsNENBQTRDO0VBQzVDLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixTQUFTO0VBQ1Qsa0JBQWtCO0FBQ3BCO0FBQ0E7RUFDRSxrQkFBa0I7RUFDbEIsU0FBUztFQUNULE9BQU87RUFDUCxZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGNBQWM7RUFDZCw0Q0FBNEM7QUFDOUM7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixrQ0FBa0M7RUFDbEMsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBQ1osYUFBYTtFQUNiLDRDQUE0QztFQUM1QyxvQ0FBb0M7RUFDcEMsYUFBYTtFQUNiLFlBQVk7QUFDZDtBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE9BQU87RUFDUCxTQUFTO0VBQ1QsaUJBQWlCO0VBQ2pCLGVBQWU7QUFDakI7QUFDQTtFQUNFLGtCQUFrQjtFQUNsQixRQUFRO0VBQ1IsU0FBUztFQUNULFlBQVk7RUFDWixpQkFBaUI7RUFDakIsZUFBZTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL2J1c2luZXNzY2FyZHMvYnVzaW5lc3NjYXJkcy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4uY2xlYXJBbGxCdG46aG92ZXJ7XG4gIGJhY2tncm91bmQtY29sb3I6ICByZ2IoMjU1LCAyLCAyKTtcbn1cbi5jbGVhckFsbEJ0bntcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDIwMSwgMCwgMCk7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGJvcmRlcjogM3B4IHNvbGlkIHdoaXRlO1xuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmO1xuICBmb250LXNpemU6IDE1cHg7IFxuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHBhZGRpbmc6IDlweCAxOHB4O1xuICB0cmFuc2l0aW9uOiAuNXMgZWFzZTtcbiAgbGVmdDogNjIlOyAgXG4gIGJvcmRlci1yYWRpdXM6IDdweDtcbn1cbi5zYW1wbGVIZWFkZXIge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGxlZnQ6IDE4JTsgIFxuICB0b3A6IDUlO1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBmb250LXNpemU6MzVweDtcbiAgZm9udC1mYW1pbHk6IFwiVGltZXMgTmV3IFJvbWFuXCIsIFRpbWVzLCBzZXJpZjsgXG59XG5cbi5zYW1wbGVCb3gge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDcsIDExOSwgNyk7XG4gIGNvbG9yOiBibGFjaztcbiAgbGVmdDogMzEuNSU7IFxuICB3aWR0aDogNDAwcHg7XG4gIGhlaWdodDogMjIwcHg7IFxuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmO1xuICBib3JkZXI6IDVweCBzb2xpZCByZ2IoMjU1LCAyNTUsIDI1NSk7XG4gIHBhZGRpbmc6IDIwcHg7XG4gIG1hcmdpbjogMjBweDtcbn1cblxuLnNhbXBsZUJvZHkxe1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogNSU7XG4gIGxlZnQ6IDMwJTsgIFxuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAzOHB4O1xufVxuLnNhbXBsZUJvZHkye1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogMTElO1xuICBsZWZ0OiAyMiU7IFxuICBjb2xvcjogYmxhY2s7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBmb250LXNpemU6IDE4cHg7ICBcbn0gXG5cblxuXG5cbiJdfQ== */");
 
 /***/ }),
 
@@ -757,10 +758,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BusinessCardsComponent", function() { return BusinessCardsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _services_businesscards_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/businesscards.service */ "./src/app/services/businesscards.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _services_businesscards_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/businesscards.service */ "./src/app/services/businesscards.service.ts");
 
 
 
@@ -770,26 +771,28 @@ let BusinessCardsComponent = class BusinessCardsComponent {
     constructor(businessCardsService, router) {
         this.businessCardsService = businessCardsService;
         this.router = router;
+        this.getCardsFromContainer();
+    }
+    sortedCards() {
+        return this.cardsList.sort();
+    }
+    clearAllCards(cardLists) {
+        this.cardsList = this.businessCardsService.clearAllCards(this.cardsList);
+    }
+    //codes from https://github.com/angular/angularfire/blob/master/docs/firestore/collections.md
+    getCardsFromContainer() {
+        this.businessCardsService.getMyCardsContainers().snapshotChanges()
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(changes => changes.map(myCard => (Object.assign({ id: myCard.payload.doc.id }, myCard.payload.doc.data()))))).subscribe(bcard => { this.cardsList = bcard; });
     }
     ngOnInit() {
-        this.getBusinessCards();
-    }
-    getBusinessCards() {
-        this.businessCardsService.getMyCardsContainers().snapshotChanges()
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(changes => changes.map(c => (Object.assign({ id: c.payload.doc.id }, c.payload.doc.data()))))).subscribe(card => {
-            this.businessCards = card;
-        });
-    }
-    onClikcAdd() {
-        this.router.navigate(['/new-businesscard']);
     }
 };
 BusinessCardsComponent.ctorParameters = () => [
-    { type: _services_businesscards_service__WEBPACK_IMPORTED_MODULE_3__["BusinesscardsService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+    { type: _services_businesscards_service__WEBPACK_IMPORTED_MODULE_4__["BusinesscardsService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
 ];
 BusinessCardsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-businessCards',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./businesscards.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/businesscards/businesscards.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./businesscards.component.css */ "./src/app/businesscards/businesscards.component.css")).default]
@@ -1199,12 +1202,22 @@ let BusinesscardsService = class BusinesscardsService {
         newCard.cardIndex = this.cardUUID;
         return this.myCardsContainer.doc(this.cardUUID).set(Object.assign({}, newCard));
     }
-    removeMyCard(cardID) {
-        console.log("Remove Card ID#: " + cardID);
+    removeMyCard(selectedCard, cardID) {
+        console.log("[Service REMOVED] Card ID#: " + cardID);
         return this.myCardsContainer.doc(cardID).delete();
     }
+    clearAllCards(cardLists) {
+        console.log("[Service CLEARED ALL CARDS]");
+        var item = 0;
+        for (let bc of cardLists) {
+            this.removeMyCard(bc, bc.cardIndex);
+            item++;
+        }
+        console.log("[Service] Total Removed Cards : " + item);
+        return cardLists;
+    }
     updateMyCard(selectedCard, cardID) {
-        console.log("Update Card ID#: " + cardID);
+        console.log("[Service UPDATED] Card ID#: " + cardID);
         return this.myCardsContainer.doc(cardID).update(selectedCard);
     }
 };
@@ -1233,8 +1246,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WebcamService", function() { return WebcamService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 
 
 
@@ -1242,24 +1255,17 @@ __webpack_require__.r(__webpack_exports__);
 let WebcamService = class WebcamService {
     constructor(http) {
         this.http = http;
-        this.url = `https://vision.googleapis.com/v1/images:annotate?key=${src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["firebase"]}`;
+        this.url = `https://vision.googleapis.com/v1/images:annotate?key=${src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["firebase"]}`;
     }
-    getData(imageBase64) {
-        const parsedImage = imageBase64.replace(/^data:image\/(png|jpg|jpeg);base64,/, '');
-        return this.http.post(this.url, {
-            requests: [{
-                    image: {
-                        content: parsedImage
-                    },
-                    features: [{
-                            type: 'TEXT_DETECTION'
-                        }]
-                }]
-        });
+    getImageDataFromWebcam(snapshot) {
+        const inputImage = snapshot.replace(/^data:image\/(png|jpg|jpeg);base64,/, '');
+        return this.http.post(this.url, { requests: [{ image: { content: inputImage },
+                    features: [{ type: 'TEXT_DETECTION' }]
+                }] });
     }
 };
 WebcamService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
 ];
 WebcamService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -1332,7 +1338,7 @@ UserprofileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".snapshot img {\n   width: 515px;\n   height: 290px;\n}\n\n.snapshot-button{\n  width:500px;\n}\n\n@media only screen and (max-width: 900px) {\n    webcam {\n      margin-left: -80px;\n    }\n    .snapshot-button {\n      margin-left: -80px;\n    }\n  }\n\n.myImage{\n    position: absolute;\n    left: 5%; \n  }\n\n.camera-btn{\n    background: rgb(255, 181, 22);\n    text-align: center;\n    color: black;\n    border: 7px solid white;\n    font-family: \"Times New Roman\", Times, serif;\n    font-size: 19px; \n    position: absolute;\n    transition: .5s ease;\n    left: 115%;  \n    top: 110%;\n    width: 140px;\n    height: 150px;\n    border-radius: 8px;\n  }\n\n.camera-btn:hover{\n    background: rgb(216, 101, 0);\n    color: white;\n    border: 7px solid white;\n   \n    }\n\n.okBtn{\n    background-color: rgb(100, 171, 0);\n    color: white;\n    text-align: center;\n    font-family: \"Times New Roman\", Times, serif;\n    border: 4px solid rgb(61, 103, 3);\n    font-weight: bold;\n    font-size: 15px; \n    position: absolute;\n    padding: 9px 20px;\n    transition: .5s ease;\n    left: 20%;\n    top: 150%;\n    border-radius: 8px;\n  }\n\n.okBtn:hover{\n    background: white;\n    color: rgb(100, 171, 0);\n    }\n\n.retakeBtn{\n    background-color: rgb(179, 5, 5);\n    color: white;\n    text-align: center;\n    font-weight: bold;\n    border: 4px solid rgb(114, 2, 2);\n    font-family: \"Times New Roman\", Times, serif;\n    font-size: 15px; \n    position: absolute;\n    padding: 9px 22px;\n    transition: .5s ease;\n    left: 53%;\n    top: 150%;\n    border-radius: 8px;\n  }\n\n.retakeBtn:hover{\n    background: white;\n    color: rgb(179, 5, 5);\n    }\n  \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2ViY2FtL3dlYmNhbS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0dBQ0csWUFBWTtHQUNaLGFBQWE7QUFDaEI7O0FBRUE7RUFDRSxXQUFXO0FBQ2I7O0FBR0E7SUFDSTtNQUNFLGtCQUFrQjtJQUNwQjtJQUNBO01BQ0Usa0JBQWtCO0lBQ3BCO0VBQ0Y7O0FBRUE7SUFDRSxrQkFBa0I7SUFDbEIsUUFBUTtFQUNWOztBQUdBO0lBQ0UsNkJBQTZCO0lBQzdCLGtCQUFrQjtJQUNsQixZQUFZO0lBQ1osdUJBQXVCO0lBQ3ZCLDRDQUE0QztJQUM1QyxlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLG9CQUFvQjtJQUNwQixVQUFVO0lBQ1YsU0FBUztJQUNULFlBQVk7SUFDWixhQUFhO0lBQ2Isa0JBQWtCO0VBQ3BCOztBQUVBO0lBQ0UsNEJBQTRCO0lBQzVCLFlBQVk7SUFDWix1QkFBdUI7O0lBRXZCOztBQUVGO0lBQ0Usa0NBQWtDO0lBQ2xDLFlBQVk7SUFDWixrQkFBa0I7SUFDbEIsNENBQTRDO0lBQzVDLGlDQUFpQztJQUNqQyxpQkFBaUI7SUFDakIsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixpQkFBaUI7SUFDakIsb0JBQW9CO0lBQ3BCLFNBQVM7SUFDVCxTQUFTO0lBQ1Qsa0JBQWtCO0VBQ3BCOztBQUVBO0lBQ0UsaUJBQWlCO0lBQ2pCLHVCQUF1QjtJQUN2Qjs7QUFFRjtJQUNFLGdDQUFnQztJQUNoQyxZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLGlCQUFpQjtJQUNqQixnQ0FBZ0M7SUFDaEMsNENBQTRDO0lBQzVDLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsaUJBQWlCO0lBQ2pCLG9CQUFvQjtJQUNwQixTQUFTO0lBQ1QsU0FBUztJQUNULGtCQUFrQjtFQUNwQjs7QUFFQTtJQUNFLGlCQUFpQjtJQUNqQixxQkFBcUI7SUFDckIiLCJmaWxlIjoic3JjL2FwcC93ZWJjYW0vd2ViY2FtLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc25hcHNob3QgaW1nIHtcbiAgIHdpZHRoOiA1MTVweDtcbiAgIGhlaWdodDogMjkwcHg7XG59XG5cbi5zbmFwc2hvdC1idXR0b257XG4gIHdpZHRoOjUwMHB4O1xufVxuXG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1heC13aWR0aDogOTAwcHgpIHtcbiAgICB3ZWJjYW0ge1xuICAgICAgbWFyZ2luLWxlZnQ6IC04MHB4O1xuICAgIH1cbiAgICAuc25hcHNob3QtYnV0dG9uIHtcbiAgICAgIG1hcmdpbi1sZWZ0OiAtODBweDtcbiAgICB9XG4gIH1cblxuICAubXlJbWFnZXtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgbGVmdDogNSU7IFxuICB9XG5cblxuICAuY2FtZXJhLWJ0bntcbiAgICBiYWNrZ3JvdW5kOiByZ2IoMjU1LCAxODEsIDIyKTtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgY29sb3I6IGJsYWNrO1xuICAgIGJvcmRlcjogN3B4IHNvbGlkIHdoaXRlO1xuICAgIGZvbnQtZmFtaWx5OiBcIlRpbWVzIE5ldyBSb21hblwiLCBUaW1lcywgc2VyaWY7XG4gICAgZm9udC1zaXplOiAxOXB4OyBcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdHJhbnNpdGlvbjogLjVzIGVhc2U7XG4gICAgbGVmdDogMTE1JTsgIFxuICAgIHRvcDogMTEwJTtcbiAgICB3aWR0aDogMTQwcHg7XG4gICAgaGVpZ2h0OiAxNTBweDtcbiAgICBib3JkZXItcmFkaXVzOiA4cHg7XG4gIH1cblxuICAuY2FtZXJhLWJ0bjpob3ZlcntcbiAgICBiYWNrZ3JvdW5kOiByZ2IoMjE2LCAxMDEsIDApO1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICBib3JkZXI6IDdweCBzb2xpZCB3aGl0ZTtcbiAgIFxuICAgIH1cblxuICAub2tCdG57XG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDEwMCwgMTcxLCAwKTtcbiAgICBjb2xvcjogd2hpdGU7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIGZvbnQtZmFtaWx5OiBcIlRpbWVzIE5ldyBSb21hblwiLCBUaW1lcywgc2VyaWY7XG4gICAgYm9yZGVyOiA0cHggc29saWQgcmdiKDYxLCAxMDMsIDMpO1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIGZvbnQtc2l6ZTogMTVweDsgXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHBhZGRpbmc6IDlweCAyMHB4O1xuICAgIHRyYW5zaXRpb246IC41cyBlYXNlO1xuICAgIGxlZnQ6IDIwJTtcbiAgICB0b3A6IDE1MCU7XG4gICAgYm9yZGVyLXJhZGl1czogOHB4O1xuICB9XG5cbiAgLm9rQnRuOmhvdmVye1xuICAgIGJhY2tncm91bmQ6IHdoaXRlO1xuICAgIGNvbG9yOiByZ2IoMTAwLCAxNzEsIDApO1xuICAgIH1cblxuICAucmV0YWtlQnRue1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigxNzksIDUsIDUpO1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgYm9yZGVyOiA0cHggc29saWQgcmdiKDExNCwgMiwgMik7XG4gICAgZm9udC1mYW1pbHk6IFwiVGltZXMgTmV3IFJvbWFuXCIsIFRpbWVzLCBzZXJpZjtcbiAgICBmb250LXNpemU6IDE1cHg7IFxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICBwYWRkaW5nOiA5cHggMjJweDtcbiAgICB0cmFuc2l0aW9uOiAuNXMgZWFzZTtcbiAgICBsZWZ0OiA1MyU7XG4gICAgdG9wOiAxNTAlO1xuICAgIGJvcmRlci1yYWRpdXM6IDhweDtcbiAgfVxuXG4gIC5yZXRha2VCdG46aG92ZXJ7XG4gICAgYmFja2dyb3VuZDogd2hpdGU7XG4gICAgY29sb3I6IHJnYigxNzksIDUsIDUpO1xuICAgIH1cbiAgIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".myImage{\n  position: absolute;\n  left: 5%; \n}\n\n\n\n\n\n\n\n.camera-btn{\n  background: rgb(250, 201, 3);\n  color: black;\n  border: 7px solid rgba(0, 0, 0, 0.817);\n  text-align: center;\n  font-family: \"Times New Roman\", Times, serif;\n  font-size: 19px; \n  position: absolute;\n  transition: .5s ease;\n  left: 115%;  \n  top: 110%;\n  width: 140px;\n  height: 150px;\n  border-radius: 8px;\n}\n\n\n\n\n\n\n\n.camera-btn:hover{\n  background: rgb(51, 245, 74);\n  color: black;\n  border: 7px solid black;\n \n  }\n\n\n\n\n\n\n\n.okBtn{\n  background-color: rgb(100, 171, 0);\n  color: white;\n  text-align: center;\n  font-family: \"Times New Roman\", Times, serif;\n  border: 4px solid rgb(61, 103, 3);\n  font-weight: bold;\n  font-size: 15px; \n  position: absolute;\n  padding: 9px 20px;\n  transition: .5s ease;\n  left: 20%;\n  top: 150%;\n  border-radius: 8px;\n}\n\n\n\n\n\n\n\n.okBtn:hover{\n  background: white;\n  color: rgb(100, 171, 0);\n  }\n\n\n\n\n\n\n\n.retakeBtn{\n  background-color: rgb(179, 5, 5);\n  color: white;\n  text-align: center;\n  font-weight: bold;\n  border: 4px solid rgb(114, 2, 2);\n  font-family: \"Times New Roman\", Times, serif;\n  font-size: 15px; \n  position: absolute;\n  padding: 9px 22px;\n  transition: .5s ease;\n  left: 53%;\n  top: 150%;\n  border-radius: 8px;\n}\n\n\n\n\n\n\n\n.retakeBtn:hover{\n  background: white;\n  color: rgb(179, 5, 5);\n  }\n\n\n\n\n\n\n\n.snapshot img {\n   width: 515px;\n   height: 290px;\n}\n\n\n\n\n\n\n\n.snapshot-button{\n  width:500px;\n}\n\n\n\n\n\n\n\n@media only screen and (max-width: 900px) {\n    webcam {\n      margin-left: -80px;\n    }\n    .snapshot-button {\n      margin-left: -80px;\n    }\n  }\n\n  \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2ViY2FtL3dlYmNhbS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLFFBQVE7QUFDVjs7Ozs7Ozs7QUFRQTtFQUNFLDRCQUE0QjtFQUM1QixZQUFZO0VBQ1osc0NBQXNDO0VBQ3RDLGtCQUFrQjtFQUNsQiw0Q0FBNEM7RUFDNUMsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixvQkFBb0I7RUFDcEIsVUFBVTtFQUNWLFNBQVM7RUFDVCxZQUFZO0VBQ1osYUFBYTtFQUNiLGtCQUFrQjtBQUNwQjs7Ozs7Ozs7QUFFQTtFQUNFLDRCQUE0QjtFQUM1QixZQUFZO0VBQ1osdUJBQXVCOztFQUV2Qjs7Ozs7Ozs7QUFFRjtFQUNFLGtDQUFrQztFQUNsQyxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLDRDQUE0QztFQUM1QyxpQ0FBaUM7RUFDakMsaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixTQUFTO0VBQ1QsU0FBUztFQUNULGtCQUFrQjtBQUNwQjs7Ozs7Ozs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQix1QkFBdUI7RUFDdkI7Ozs7Ozs7O0FBRUY7RUFDRSxnQ0FBZ0M7RUFDaEMsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsZ0NBQWdDO0VBQ2hDLDRDQUE0QztFQUM1QyxlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsU0FBUztFQUNULFNBQVM7RUFDVCxrQkFBa0I7QUFDcEI7Ozs7Ozs7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIscUJBQXFCO0VBQ3JCOzs7Ozs7OztBQUdGO0dBQ0csWUFBWTtHQUNaLGFBQWE7QUFDaEI7Ozs7Ozs7O0FBRUE7RUFDRSxXQUFXO0FBQ2I7Ozs7Ozs7O0FBR0E7SUFDSTtNQUNFLGtCQUFrQjtJQUNwQjtJQUNBO01BQ0Usa0JBQWtCO0lBQ3BCO0VBQ0YiLCJmaWxlIjoic3JjL2FwcC93ZWJjYW0vd2ViY2FtLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubXlJbWFnZXtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiA1JTsgXG59XG5cblxuXG5cblxuXG5cbi5jYW1lcmEtYnRue1xuICBiYWNrZ3JvdW5kOiByZ2IoMjUwLCAyMDEsIDMpO1xuICBjb2xvcjogYmxhY2s7XG4gIGJvcmRlcjogN3B4IHNvbGlkIHJnYmEoMCwgMCwgMCwgMC44MTcpO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGZvbnQtZmFtaWx5OiBcIlRpbWVzIE5ldyBSb21hblwiLCBUaW1lcywgc2VyaWY7XG4gIGZvbnQtc2l6ZTogMTlweDsgXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdHJhbnNpdGlvbjogLjVzIGVhc2U7XG4gIGxlZnQ6IDExNSU7ICBcbiAgdG9wOiAxMTAlO1xuICB3aWR0aDogMTQwcHg7XG4gIGhlaWdodDogMTUwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDhweDtcbn1cblxuLmNhbWVyYS1idG46aG92ZXJ7XG4gIGJhY2tncm91bmQ6IHJnYig1MSwgMjQ1LCA3NCk7XG4gIGNvbG9yOiBibGFjaztcbiAgYm9yZGVyOiA3cHggc29saWQgYmxhY2s7XG4gXG4gIH1cblxuLm9rQnRue1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMTAwLCAxNzEsIDApO1xuICBjb2xvcjogd2hpdGU7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgZm9udC1mYW1pbHk6IFwiVGltZXMgTmV3IFJvbWFuXCIsIFRpbWVzLCBzZXJpZjtcbiAgYm9yZGVyOiA0cHggc29saWQgcmdiKDYxLCAxMDMsIDMpO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAxNXB4OyBcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBwYWRkaW5nOiA5cHggMjBweDtcbiAgdHJhbnNpdGlvbjogLjVzIGVhc2U7XG4gIGxlZnQ6IDIwJTtcbiAgdG9wOiAxNTAlO1xuICBib3JkZXItcmFkaXVzOiA4cHg7XG59XG5cbi5va0J0bjpob3ZlcntcbiAgYmFja2dyb3VuZDogd2hpdGU7XG4gIGNvbG9yOiByZ2IoMTAwLCAxNzEsIDApO1xuICB9XG5cbi5yZXRha2VCdG57XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigxNzksIDUsIDUpO1xuICBjb2xvcjogd2hpdGU7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGJvcmRlcjogNHB4IHNvbGlkIHJnYigxMTQsIDIsIDIpO1xuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmO1xuICBmb250LXNpemU6IDE1cHg7IFxuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHBhZGRpbmc6IDlweCAyMnB4O1xuICB0cmFuc2l0aW9uOiAuNXMgZWFzZTtcbiAgbGVmdDogNTMlO1xuICB0b3A6IDE1MCU7XG4gIGJvcmRlci1yYWRpdXM6IDhweDtcbn1cblxuLnJldGFrZUJ0bjpob3ZlcntcbiAgYmFja2dyb3VuZDogd2hpdGU7XG4gIGNvbG9yOiByZ2IoMTc5LCA1LCA1KTtcbiAgfVxuXG5cbi5zbmFwc2hvdCBpbWcge1xuICAgd2lkdGg6IDUxNXB4O1xuICAgaGVpZ2h0OiAyOTBweDtcbn1cblxuLnNuYXBzaG90LWJ1dHRvbntcbiAgd2lkdGg6NTAwcHg7XG59XG5cblxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA5MDBweCkge1xuICAgIHdlYmNhbSB7XG4gICAgICBtYXJnaW4tbGVmdDogLTgwcHg7XG4gICAgfVxuICAgIC5zbmFwc2hvdC1idXR0b24ge1xuICAgICAgbWFyZ2luLWxlZnQ6IC04MHB4O1xuICAgIH1cbiAgfVxuXG4gICJdfQ== */");
 
 /***/ }),
 
@@ -1348,13 +1354,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WebCamComponent", function() { return WebCamComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
-/* harmony import */ var _models_businesscard_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/businesscard.model */ "./src/app/models/businesscard.model.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var dom_to_image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! dom-to-image */ "./node_modules/dom-to-image/src/dom-to-image.js");
 /* harmony import */ var dom_to_image__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(dom_to_image__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _services_webcam_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/webcam.service */ "./src/app/services/webcam.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-
 
 
 
@@ -1365,72 +1369,52 @@ let WebCamComponent = class WebCamComponent {
     constructor(router, webcamService) {
         this.router = router;
         this.webcamService = webcamService;
-        this.imageBase64 = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        this.textDetection = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        this.webcamImage = null; // latest snapshot
-        this.trigger = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"](); // webcam snapshot trigger
-        this.errors = [];
-        this.onWebcam = false;
+        this.snapshot = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.snaptext = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.myWebcamPic = null;
+        this.mysnapshot = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
     }
-    ngOnInit() {
+    retakePhoto() {
+        this.myWebcamPic = null;
     }
-    toggleWebcam() {
-        this.onWebcam = !this.onWebcam;
-        this.businessCard = new _models_businesscard_model__WEBPACK_IMPORTED_MODULE_3__["Businesscard"]();
+    takeSnapShot() {
+        this.mysnapshot.next();
     }
-    receiveWebcamImage(imageBase64) {
-        this.businessCard.image = imageBase64;
+    getMyImage(webcamImage) {
+        this.myWebcamPic = webcamImage;
     }
-    receiveTextDetection(textDetection) {
-        console.log(textDetection.responses[0].textAnnotations);
-    }
-    triggerSnapshot() {
-        this.trigger.next();
-    }
-    get triggerObservable() {
-        return this.trigger.asObservable();
-    }
-    handleImage(webcamImage) {
-        console.log('received webcam image', webcamImage);
-        this.webcamImage = webcamImage;
-    }
-    handleInitError(error) {
-        if (error.mediaStreamError && error.mediaStreamError.name === 'NotAllowedError') {
-            console.warn('Camera access was not allowed by user!');
+    getImageError(err) {
+        if (err.mediaStreamError) {
+            if (err.mediaStreamError.name === 'NotAllowedError') {
+                console.log('Webcam prohibited by user');
+            }
         }
-        this.errors.push(error);
     }
-    convertToBase64() {
-        const imgNode = document.getElementById('image');
-        console.log(imgNode);
-        dom_to_image__WEBPACK_IMPORTED_MODULE_4___default.a.toPng(imgNode)
-            .then((dataUrl) => {
-            console.log('converting base64...');
-            this.imageBase64.emit(dataUrl);
-            this.webcamService.getData(dataUrl)
-                .subscribe(res => {
-                this.textDetection.emit(res);
-            }, (err) => {
-                console.log(err);
+    //Codes are modified from https://www.npmjs.com/package/dom-to-image-more
+    detectTextImage() {
+        dom_to_image__WEBPACK_IMPORTED_MODULE_4___default.a.toPng(document.getElementById('image')).then((src) => {
+            this.snapshot.emit(src);
+            this.webcamService.getImageDataFromWebcam(src).subscribe(output => {
+                this.snaptext.emit(output);
             });
-        }).catch((e) => {
-            console.log('SELECTED IMAGE BASE64 SOMETHING WENT WRONG');
-            console.log(e);
+            alert("Text Detection Fails!");
         });
-        alert("The Card Image has been added!");
-        //this.router.navigate(['/businessCards']);
     }
+    get observeSnapShot() {
+        return this.mysnapshot.asObservable();
+    }
+    ngOnInit() { }
 };
 WebCamComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
     { type: _services_webcam_service__WEBPACK_IMPORTED_MODULE_5__["WebcamService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-], WebCamComponent.prototype, "imageBase64", void 0);
+], WebCamComponent.prototype, "snapshot", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-], WebCamComponent.prototype, "textDetection", void 0);
+], WebCamComponent.prototype, "snaptext", void 0);
 WebCamComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-webcam',
@@ -1452,7 +1436,7 @@ WebCamComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("body{\n    background-color: #000000;\n  }\n.imageHeaderBox {\n    position: relative;\n    background-color: rgb(241, 220, 201);\n    color: black;\n    left: 95%;  \n    width: 350px;\n    height: 200px; \n    font-family: \"Times New Roman\", Times, serif;\n    border: 5px solid rgb(155, 114, 77);\n    padding: 20px;\n    margin: 20px;\n  }\n.cardHeader {\n    position: absolute;\n    left: 15%;  \n    top: 12%;\n    color: black;\n    font-weight: normal;\n    font-size: 23px;\n    font-family: \"Times New Roman\", Times, serif; \n  }\n.webcamBtn{\n    background-color: black;\n    color: white;\n    font-family: \"Times New Roman\", Times, serif;\n    font-size: 16px; \n    position: absolute;\n    padding: 9px 15px;\n    transition: .5s ease;\n    left: 10%;  \n    bottom: 9%;\n    border-radius: 8px;\n}\n.webcamBtn:hover{\n  background-color: rgb(155, 114, 77);\n}\n.stopwebcamBtn{\n  background-color: black;\n  color: white;\n  font-family: \"Times New Roman\", Times, serif;\n  font-size: 16px; \n  position: absolute;\n  padding: 9px 15px;\n  transition: .5s ease;\n  right: 10%;  \n  align-self: right;\n  bottom: 9%;\n  border-radius: 8px;\n}\n.stopwebcamBtn:hover{\n  background-color: rgb(155, 114, 77);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2ViY2FtcGFnZS93ZWJjYW1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSx5QkFBeUI7RUFDM0I7QUFDRjtJQUNJLGtCQUFrQjtJQUNsQixvQ0FBb0M7SUFDcEMsWUFBWTtJQUNaLFNBQVM7SUFDVCxZQUFZO0lBQ1osYUFBYTtJQUNiLDRDQUE0QztJQUM1QyxtQ0FBbUM7SUFDbkMsYUFBYTtJQUNiLFlBQVk7RUFDZDtBQUlGO0lBQ0ksa0JBQWtCO0lBQ2xCLFNBQVM7SUFDVCxRQUFRO0lBQ1IsWUFBWTtJQUNaLG1CQUFtQjtJQUNuQixlQUFlO0lBQ2YsNENBQTRDO0VBQzlDO0FBRUE7SUFDRSx1QkFBdUI7SUFDdkIsWUFBWTtJQUNaLDRDQUE0QztJQUM1QyxlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLGlCQUFpQjtJQUNqQixvQkFBb0I7SUFDcEIsU0FBUztJQUNULFVBQVU7SUFDVixrQkFBa0I7QUFDdEI7QUFFQTtFQUNFLG1DQUFtQztBQUNyQztBQUVBO0VBQ0UsdUJBQXVCO0VBQ3ZCLFlBQVk7RUFDWiw0Q0FBNEM7RUFDNUMsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsb0JBQW9CO0VBQ3BCLFVBQVU7RUFDVixpQkFBaUI7RUFDakIsVUFBVTtFQUNWLGtCQUFrQjtBQUNwQjtBQUVBO0VBQ0UsbUNBQW1DO0FBQ3JDIiwiZmlsZSI6InNyYy9hcHAvd2ViY2FtcGFnZS93ZWJjYW1wYWdlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5e1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDAwMDA7XG4gIH1cbi5pbWFnZUhlYWRlckJveCB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDEsIDIyMCwgMjAxKTtcbiAgICBjb2xvcjogYmxhY2s7XG4gICAgbGVmdDogOTUlOyAgXG4gICAgd2lkdGg6IDM1MHB4O1xuICAgIGhlaWdodDogMjAwcHg7IFxuICAgIGZvbnQtZmFtaWx5OiBcIlRpbWVzIE5ldyBSb21hblwiLCBUaW1lcywgc2VyaWY7XG4gICAgYm9yZGVyOiA1cHggc29saWQgcmdiKDE1NSwgMTE0LCA3Nyk7XG4gICAgcGFkZGluZzogMjBweDtcbiAgICBtYXJnaW46IDIwcHg7XG4gIH1cblxuXG5cbi5jYXJkSGVhZGVyIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgbGVmdDogMTUlOyAgXG4gICAgdG9wOiAxMiU7XG4gICAgY29sb3I6IGJsYWNrO1xuICAgIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gICAgZm9udC1zaXplOiAyM3B4O1xuICAgIGZvbnQtZmFtaWx5OiBcIlRpbWVzIE5ldyBSb21hblwiLCBUaW1lcywgc2VyaWY7IFxuICB9XG5cbiAgLndlYmNhbUJ0bntcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgICBjb2xvcjogd2hpdGU7XG4gICAgZm9udC1mYW1pbHk6IFwiVGltZXMgTmV3IFJvbWFuXCIsIFRpbWVzLCBzZXJpZjtcbiAgICBmb250LXNpemU6IDE2cHg7IFxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICBwYWRkaW5nOiA5cHggMTVweDtcbiAgICB0cmFuc2l0aW9uOiAuNXMgZWFzZTtcbiAgICBsZWZ0OiAxMCU7ICBcbiAgICBib3R0b206IDklO1xuICAgIGJvcmRlci1yYWRpdXM6IDhweDtcbn1cblxuLndlYmNhbUJ0bjpob3ZlcntcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDE1NSwgMTE0LCA3Nyk7XG59XG5cbi5zdG9wd2ViY2FtQnRue1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmO1xuICBmb250LXNpemU6IDE2cHg7IFxuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHBhZGRpbmc6IDlweCAxNXB4O1xuICB0cmFuc2l0aW9uOiAuNXMgZWFzZTtcbiAgcmlnaHQ6IDEwJTsgIFxuICBhbGlnbi1zZWxmOiByaWdodDtcbiAgYm90dG9tOiA5JTtcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xufVxuXG4uc3RvcHdlYmNhbUJ0bjpob3ZlcntcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDE1NSwgMTE0LCA3Nyk7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".imageHeaderBox {\n    position: relative;\n    background-color: rgb(241, 220, 201);\n    color: black;\n    left: 95%;  \n    width: 350px;\n    height: 200px; \n    font-family: \"Times New Roman\", Times, serif;\n    border: 5px solid rgb(155, 114, 77);\n    padding: 20px;\n    margin: 20px;\n  }\n.cardHeader {\n    position: absolute;\n    left: 15%;  \n    top: 12%;\n    color: black;\n    font-weight: normal;\n    font-size: 23px;\n    font-family: \"Times New Roman\", Times, serif; \n  }\n.webcamBtn{\n    background-color: black;\n    color: white;\n    font-family: \"Times New Roman\", Times, serif;\n    font-size: 16px; \n    position: absolute;\n    padding: 9px 15px;\n    transition: .5s ease;\n    left: 32%;  \n    top: 37%;\n    border-radius: 8px;\n}\n.webcamBtn:hover{\n  background-color: rgb(155, 114, 77);\n}\n.stopwebcamBtn{\n  background-color: black;\n  color: white;\n  font-family: \"Times New Roman\", Times, serif;\n  font-size: 16px; \n  position: absolute;\n  padding: 9px 15px;\n  transition: .5s ease;\n  left:32%; \n  align-self: right;\n  bottom: 9%;\n  border-radius: 8px;\n}\n.stopwebcamBtn:hover{\n  background-color: rgb(155, 114, 77);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2ViY2FtcGFnZS93ZWJjYW1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxrQkFBa0I7SUFDbEIsb0NBQW9DO0lBQ3BDLFlBQVk7SUFDWixTQUFTO0lBQ1QsWUFBWTtJQUNaLGFBQWE7SUFDYiw0Q0FBNEM7SUFDNUMsbUNBQW1DO0lBQ25DLGFBQWE7SUFDYixZQUFZO0VBQ2Q7QUFDRjtJQUNJLGtCQUFrQjtJQUNsQixTQUFTO0lBQ1QsUUFBUTtJQUNSLFlBQVk7SUFDWixtQkFBbUI7SUFDbkIsZUFBZTtJQUNmLDRDQUE0QztFQUM5QztBQUVBO0lBQ0UsdUJBQXVCO0lBQ3ZCLFlBQVk7SUFDWiw0Q0FBNEM7SUFDNUMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixpQkFBaUI7SUFDakIsb0JBQW9CO0lBQ3BCLFNBQVM7SUFDVCxRQUFRO0lBQ1Isa0JBQWtCO0FBQ3RCO0FBRUE7RUFDRSxtQ0FBbUM7QUFDckM7QUFFQTtFQUNFLHVCQUF1QjtFQUN2QixZQUFZO0VBQ1osNENBQTRDO0VBQzVDLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixRQUFRO0VBQ1IsaUJBQWlCO0VBQ2pCLFVBQVU7RUFDVixrQkFBa0I7QUFDcEI7QUFFQTtFQUNFLG1DQUFtQztBQUNyQyIsImZpbGUiOiJzcmMvYXBwL3dlYmNhbXBhZ2Uvd2ViY2FtcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmltYWdlSGVhZGVyQm94IHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI0MSwgMjIwLCAyMDEpO1xuICAgIGNvbG9yOiBibGFjaztcbiAgICBsZWZ0OiA5NSU7ICBcbiAgICB3aWR0aDogMzUwcHg7XG4gICAgaGVpZ2h0OiAyMDBweDsgXG4gICAgZm9udC1mYW1pbHk6IFwiVGltZXMgTmV3IFJvbWFuXCIsIFRpbWVzLCBzZXJpZjtcbiAgICBib3JkZXI6IDVweCBzb2xpZCByZ2IoMTU1LCAxMTQsIDc3KTtcbiAgICBwYWRkaW5nOiAyMHB4O1xuICAgIG1hcmdpbjogMjBweDtcbiAgfVxuLmNhcmRIZWFkZXIge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICBsZWZ0OiAxNSU7ICBcbiAgICB0b3A6IDEyJTtcbiAgICBjb2xvcjogYmxhY2s7XG4gICAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcbiAgICBmb250LXNpemU6IDIzcHg7XG4gICAgZm9udC1mYW1pbHk6IFwiVGltZXMgTmV3IFJvbWFuXCIsIFRpbWVzLCBzZXJpZjsgXG4gIH1cblxuICAud2ViY2FtQnRue1xuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmO1xuICAgIGZvbnQtc2l6ZTogMTZweDsgXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHBhZGRpbmc6IDlweCAxNXB4O1xuICAgIHRyYW5zaXRpb246IC41cyBlYXNlO1xuICAgIGxlZnQ6IDMyJTsgIFxuICAgIHRvcDogMzclO1xuICAgIGJvcmRlci1yYWRpdXM6IDhweDtcbn1cblxuLndlYmNhbUJ0bjpob3ZlcntcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDE1NSwgMTE0LCA3Nyk7XG59XG5cbi5zdG9wd2ViY2FtQnRue1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LWZhbWlseTogXCJUaW1lcyBOZXcgUm9tYW5cIiwgVGltZXMsIHNlcmlmO1xuICBmb250LXNpemU6IDE2cHg7IFxuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHBhZGRpbmc6IDlweCAxNXB4O1xuICB0cmFuc2l0aW9uOiAuNXMgZWFzZTtcbiAgbGVmdDozMiU7IFxuICBhbGlnbi1zZWxmOiByaWdodDtcbiAgYm90dG9tOiA5JTtcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xufVxuXG4uc3RvcHdlYmNhbUJ0bjpob3ZlcntcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDE1NSwgMTE0LCA3Nyk7XG59Il19 */");
 
 /***/ }),
 
@@ -1473,18 +1457,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let WebcampageComponent = class WebcampageComponent {
-    constructor() { this.onWebcam = false; }
-    toggleWebcam() {
-        this.onWebcam = !this.onWebcam;
+    constructor() { }
+    setImage(snapshot) { this.businessCard.image = snapshot; }
+    getImage(snapshot) { return snapshot; }
+    getTextImage(snapText) { }
+    openWebcam() {
+        this.isWebcamON = !this.isWebcamON;
+        console.log("Webcam is ON: " + this.isWebcamON);
         this.businessCard = new _models_businesscard_model__WEBPACK_IMPORTED_MODULE_2__["Businesscard"]();
     }
-    receiveWebcamImage(imageBase64) {
-        this.businessCard.image = imageBase64;
-    }
-    receiveTextDetection(textDetection) {
-        console.log(textDetection.responses[0].textAnnotations);
-    }
     ngOnInit() {
+        this.isWebcamON = false;
     }
 };
 WebcampageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1566,7 +1549,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/amy_a/Desktop/BusinessCards_Amy/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/amy_a/Desktop/BusinessCard_Final/src/main.ts */"./src/main.ts");
 
 
 /***/ })

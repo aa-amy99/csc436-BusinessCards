@@ -304,8 +304,8 @@
           \**********************************************************************************/
         /*! no static exports found */
         /***/ (function (module, exports, __webpack_require__) {
-            __webpack_require__(/*! /Users/amy_a/Desktop/BusinessCards_Amy/src/styles.css */ "./src/styles.css");
-            module.exports = __webpack_require__(/*! /Users/amy_a/Desktop/BusinessCards_Amy/node_modules/bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+            __webpack_require__(/*! /Users/amy_a/Desktop/BusinessCard_Final/src/styles.css */ "./src/styles.css");
+            module.exports = __webpack_require__(/*! /Users/amy_a/Desktop/BusinessCard_Final/node_modules/bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
             /***/ 
         })
     }, [[3, "runtime"]]]);
