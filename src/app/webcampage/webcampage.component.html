@@ -2,24 +2,20 @@
     <br>
     <br>
 <div class="col-sm-5 webcam">
-  <app-webcam *ngIf="onWebcam" (imageBase64)="receiveWebcamImage($event)" (textDetection)="receiveTextDetection($event)"></app-webcam>
+  <app-webcam *ngIf="isWebcamON" 
+  (snapshot)="setImage($event)" 
+  (snaptext)="getTextImage($event)">
+</app-webcam>
   <div>
       <div class = "imageHeaderBox">
-<div class="form-group business-card-form">
-    <div style="width: 305px;">
-      <label class="cardHeader"for="image"><i class="fa fa-address-card"></i>&#160;&#160;MY | CARD | IMAGE </label><br><br>
-      <input class="form-control mr-2" placeholder="image url" [(ngModel)]="businessCard.image" name="image">
-    </div>
-    <div class="formgroup" style="margin-top: 32px; margin-left: 10px;">
-      <button class="webcamBtn" (click)="toggleWebcam()">Start Webcam</button>
-      <button class="stopwebcamBtn" (click)="toggleWebcam()">Stop Webcam</button>
-    </div>
+      <h2 class="cardHeader"for="image"><i class="fa fa-address-card">
+      </i>&#160;&#160;MY | CARD | IMAGE </h2>
+      <button class="webcamBtn" (click)="openWebcam()">Start Webcam</button>
+      <button class="stopwebcamBtn" (click)="openWebcam()">Stop Webcam</button>
 </div>
 </div>
-<div *ngIf="businessCard.cardImage">
-    <img [src]="businessCard.image" alt="BusinessCardImage" style="width:405px; height:250px; margin-left: 40px;">
-  </div>
 </div>
+
 
 
   

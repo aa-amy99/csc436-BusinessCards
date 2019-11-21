@@ -1,28 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { Businesscard } from '../models/businesscard.model';
+
 @Component({
   selector: 'app-webcampage',
   templateUrl: './webcampage.component.html',
   styleUrls: ['./webcampage.component.css']
 })
+
 export class WebcampageComponent implements OnInit {
-  onWebcam: boolean;
+  
+  isWebcamON: boolean;
   businessCard: Businesscard;
-  constructor() {  this.onWebcam = false;}
-  toggleWebcam() {
-    this.onWebcam = !this.onWebcam;
-    this.businessCard = new Businesscard();
-  }
+  constructor() { }
 
-  receiveWebcamImage(imageBase64) {
-    this.businessCard.image = imageBase64;
-  }
+  setImage(snapshot: any) { this.businessCard.image = snapshot;}
+  getImage(snapshot: any) : string { return snapshot;}
+  getTextImage(snapText: any) {}
 
-  receiveTextDetection(textDetection) {
-    console.log(textDetection.responses[0].textAnnotations);
+  openWebcam() {
+    this.isWebcamON = !this.isWebcamON;
+    console.log("Webcam is ON: " + this.isWebcamON );
+    this.businessCard = new Businesscard(); 
   }
 
   ngOnInit() {
+    this.isWebcamON = false;
   }
 
 }

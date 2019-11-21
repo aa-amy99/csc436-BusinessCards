@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
+import domtoimage from 'dom-to-image';
 import { WebcamImage } from 'ngx-webcam/src/app/modules/webcam/domain/webcam-image';
 import { WebcamInitError } from 'ngx-webcam/src/app/modules/webcam/domain/webcam-init-error';
-import { Businesscard } from '../models/businesscard.model';
-import domtoimage from 'dom-to-image';
 import { WebcamService } from '../services/webcam.service';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-webcam',
@@ -13,76 +13,53 @@ import { Router } from '@angular/router';
   styleUrls: ['./webcam.component.css']
 })
 export class WebCamComponent implements OnInit {
-  @Output() imageBase64 = new EventEmitter();
-  @Output() textDetection = new EventEmitter();
-  onWebcam: boolean;
-  businessCard: Businesscard;
-  public webcamImage: WebcamImage = null;    // latest snapshot
-  private trigger: Subject<void> = new Subject<void>();   // webcam snapshot trigger
-  public errors: WebcamInitError[] = [];
+  
+  @Output() snapshot = new EventEmitter();
+  @Output() snaptext = new EventEmitter();
+  mysnapshot: Subject<void>;   
+  myWebcamPic: WebcamImage;   
 
   constructor(private router: Router, private webcamService: WebcamService) { 
-    this.onWebcam = false;
+    this.myWebcamPic = null;
+    this.mysnapshot = new Subject<void>();
   }
 
-  ngOnInit() {
+  retakePhoto() {
+    this.myWebcamPic =null
   }
 
-  toggleWebcam() {
-    this.onWebcam = !this.onWebcam;
-    this.businessCard = new Businesscard();
+  takeSnapShot(): void {
+    this.mysnapshot.next();
   }
 
-  receiveWebcamImage(imageBase64) {
-    this.businessCard.image = imageBase64;
+  getMyImage(webcamImage: WebcamImage): void {
+    this.myWebcamPic = webcamImage;
   }
 
-  receiveTextDetection(textDetection) {
-    console.log(textDetection.responses[0].textAnnotations);
-  }
-
-  public triggerSnapshot(): void {
-    this.trigger.next();
-  }
-
-  public get triggerObservable(): Observable<void> {
-    return this.trigger.asObservable();
-  }
-
-  public handleImage(webcamImage: WebcamImage): void {
-    console.log('received webcam image', webcamImage);
-    this.webcamImage = webcamImage;
-  }
-
-  public handleInitError(error: WebcamInitError): void {
-    if (error.mediaStreamError && error.mediaStreamError.name === 'NotAllowedError') {
-      console.warn('Camera access was not allowed by user!');
+   getImageError(err: WebcamInitError): void {
+    if (err.mediaStreamError){
+      if(err.mediaStreamError.name === 'NotAllowedError') {
+      console.log('Webcam prohibited by user');
     }
-    this.errors.push(error);
+  }
+}
+
+  //Codes are modified from https://www.npmjs.com/package/dom-to-image-more
+  detectTextImage() {
+    domtoimage.toPng(document.getElementById('image')).then( (src: string) => {
+      this.snapshot.emit(src);
+      this.webcamService.getImageDataFromWebcam(src).subscribe(output => {
+        this.snaptext.emit(output);});
+    alert("Text Detection Fails!");        
+  });
   }
 
-  convertToBase64() {
-    const imgNode = document.getElementById('image');
-    console.log(imgNode);
-    domtoimage.toPng(imgNode)
-    .then( (dataUrl: string) => {
-      console.log('converting base64...');
-      this.imageBase64.emit(dataUrl);
-      this.webcamService.getData(dataUrl)
-      .subscribe(res => {
-        this.textDetection.emit(res);
-
-      },
-      (err) => {
-        console.log(err);
-      });
-
-    }).catch( (e: any) => {
-      console.log('SELECTED IMAGE BASE64 SOMETHING WENT WRONG');
-      console.log(e);
-    });
-    alert("The Card Image has been added!");
-          //this.router.navigate(['/businessCards']);
+  public get observeSnapShot(): Observable<void> {
+    return this.mysnapshot.asObservable();
   }
+
+
+  ngOnInit() 
+  {}
 
 }
