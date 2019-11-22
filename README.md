@@ -1,18 +1,19 @@
-# Name: Amy Aumpansub
-# CSC 436 Fall 2019
-# Due Date: Nov 26th, 2019
-# Final Project: Business Cards
+## Name: Amy Aumpansub
+## CSC 436 Fall 2019
+## Due Date: Nov 26th, 2019
+## Final Project: Business Cards
 
-## Overview  
+### Overview  
 This project is created using Augular CLI: 8.3.8 and Node: 12.11.1\
 For firebase host: https://businesscard-71592.firebaseapp.com\
 For codes: https://github.com/aa-amy99/csc436-BusinessCards
     
    
-## User Details. You can use this following username and password to navigate through the website.
+### User Details. 
+You can use this following username and password to navigate through the website.\
 
-Username: chandlergegg@gmail.com
-Passwaord: 5DeepBreaths!
+Username: chandlergegg@gmail.com\
+Passwaord: 5DeepBreaths!\
 
 ## Functionality:
             - Sign-in/Sign-out 
