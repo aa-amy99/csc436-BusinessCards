@@ -16,7 +16,7 @@ export class Authguard implements CanActivate {
   }
   
   //ref. from Angular Github #9613
-  //add take(1)
+  //add take(1) 
   canActivate(route: ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<boolean> {
       return this.myAuthState.pipe(
         take(1),map((authState) => !!authState),
